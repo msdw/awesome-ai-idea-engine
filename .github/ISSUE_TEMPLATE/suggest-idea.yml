@@ -1,0 +1,93 @@
+name: Suggest an AI Idea
+description: Propose a new AI idea for the engine
+title: "[IDEA] "
+labels: ["needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Please fill in as much detail as possible.
+        Ideas without a specific target user and pain point will not be accepted.
+
+  - type: input
+    id: title
+    attributes:
+      label: Idea title
+      description: Short, specific title (e.g. "AI-powered contract review assistant for freelancers")
+      placeholder: "AI-powered ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One paragraph describing what the idea does and why it matters
+    validations:
+      required: true
+
+  - type: input
+    id: target_users
+    attributes:
+      label: Target users
+      description: Who specifically would use this? (e.g. "freelance designers", not "everyone")
+      placeholder: "e.g. freelance designers, HR managers at SMBs"
+    validations:
+      required: true
+
+  - type: textarea
+    id: pain_points
+    attributes:
+      label: Pain points
+      description: What specific problems or workflow frustrations does this solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: ai_solution
+    attributes:
+      label: AI solution
+      description: What does the AI actually do? (classify, generate, extract, match, summarize, etc.)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty estimate
+      options:
+        - low
+        - medium
+        - high
+        - very_high
+    validations:
+      required: true
+
+  - type: input
+    id: validation_step
+    attributes:
+      label: First validation step
+      description: How would you test this idea before building?
+      placeholder: "e.g. Post a landing page and measure signups"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source / evidence
+      description: Link to a forum post, job board, Reddit thread, or industry report that supports the pain point
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Quality checklist
+      options:
+        - label: This idea does not use "guaranteed income", "passive income", "easy money", or similar language
+          required: true
+        - label: This idea is specific enough to evaluate (not "an AI assistant for businesses")
+          required: true
+        - label: I have described a real target user, not "anyone"
+          required: true

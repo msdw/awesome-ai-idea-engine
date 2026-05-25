@@ -1,0 +1,61 @@
+name: Sponsor Request — Project of the Week
+description: Request a sponsored "Project of the Week" slot
+title: "[SPONSOR] "
+labels: ["sponsor-request"]
+body:
+  - type: input
+    id: project_name
+    attributes:
+      label: Project name
+    validations:
+      required: true
+
+  - type: input
+    id: project_url
+    attributes:
+      label: Project URL
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: One-sentence description
+      description: What does your project do? (shown in README)
+    validations:
+      required: true
+
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Why is this relevant to this audience?
+      description: Why would builders, consultants, and founders find this useful?
+    validations:
+      required: true
+
+  - type: input
+    id: desired_weeks
+    attributes:
+      label: Desired week(s)
+      description: e.g. "week of 2025-08-04" or "flexible"
+    validations:
+      required: false
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact email
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: eligibility
+    attributes:
+      label: Eligibility confirmation
+      options:
+        - label: My project is AI-related and genuinely useful
+          required: true
+        - label: My project does not make misleading income claims
+          required: true
+        - label: My project is not spam, adult content, or deceptive
+          required: true

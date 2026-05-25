@@ -1,0 +1,41 @@
+name: Suggest a Resource
+description: Propose a tool, dataset, library, or learning resource
+title: "[RESOURCE] "
+labels: ["needs-review"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Resource name
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Why is this useful?
+      description: One paragraph explaining the value for AI builders
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Resource type
+      options:
+        - tool
+        - dataset
+        - library
+        - tutorial
+        - paper
+        - community
+        - other
+    validations:
+      required: true
