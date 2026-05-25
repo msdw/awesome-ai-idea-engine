@@ -1,0 +1,39 @@
+name: Link Check
+
+on:
+  schedule:
+    - cron: "0 8 * * 0"
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check links
+        id: link_check
+        run: python scripts/check_links.py
+        continue-on-error: true
+
+      - name: Open issue on broken links
+        if: steps.link_check.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '[Auto] Broken links detected',
+              body: 'The weekly link check found broken links. Run `python scripts/check_links.py` locally to see the full report.',
+              labels: ['broken-link', 'automated']
+            })

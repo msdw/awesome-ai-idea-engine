@@ -1,0 +1,35 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate YAML schemas
+        run: python scripts/validate_yaml.py
+
+      - name: Check for marketing language
+        run: python scripts/validate_marketing_language.py
+
+      - name: Check generated markdown is up to date
+        run: python scripts/generate_markdown.py --check
+
+      - name: Check links (soft)
+        run: python scripts/check_links.py
+        continue-on-error: true

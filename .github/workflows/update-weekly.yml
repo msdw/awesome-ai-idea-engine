@@ -1,0 +1,53 @@
+name: Weekly Discovery Update
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Discover new ideas
+        run: python scripts/discover_new_ideas.py --mode weekly --source all
+
+      - name: Validate discovered entries
+        run: python scripts/validate_yaml.py
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: weekly discovery update"
+          branch: auto/weekly-discovery-update
+          title: "[Auto] Weekly discovery — new idea candidates"
+          body: |
+            ## Automated discovery run
+
+            This PR was created automatically by the weekly discovery workflow.
+
+            **What to do:**
+            1. Review each candidate in `data/ideas.yaml` (look for `status: candidate`)
+            2. Change `status: accepted` for entries worth keeping
+            3. Change `status: rejected` for entries to discard
+            4. Merge when satisfied with the review
+
+            **Quality checklist:**
+            - [ ] No guaranteed income / passive income language
+            - [ ] Idea is genuinely AI-native (not just AI-assisted)
+            - [ ] Target users and pain points are specific
+            - [ ] Compliance notes present for regulated domains
+          labels: automated, needs-review
+          draft: false

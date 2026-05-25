@@ -1,0 +1,44 @@
+name: Daily Discovery Update
+
+on:
+  # Disabled by default — uncomment to activate
+  # schedule:
+  #   - cron: "0 7 * * *"
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Discover new ideas
+        run: python scripts/discover_new_ideas.py --mode daily --source all
+
+      - name: Validate discovered entries
+        run: python scripts/validate_yaml.py
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: daily discovery update"
+          branch: auto/daily-discovery-update
+          title: "[Auto] Daily discovery — new idea candidates"
+          body: |
+            ## Automated discovery run
+
+            This PR was created automatically by the daily discovery workflow.
+
+            Review each candidate and set `status: accepted` or `status: rejected`.
+          labels: automated, needs-review
+          draft: false
