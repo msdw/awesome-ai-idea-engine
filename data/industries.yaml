@@ -1,0 +1,56 @@
+# Industry taxonomy
+industries:
+  - id: legal
+    regulated: true
+    label: Legal
+  - id: healthcare
+    regulated: true
+    label: Healthcare
+  - id: finance
+    regulated: true
+    label: Finance & Banking
+  - id: insurance
+    regulated: true
+    label: Insurance
+  - id: hr_recruiting
+    regulated: false
+    label: HR & Recruiting
+  - id: real_estate
+    regulated: false
+    label: Real Estate
+  - id: marketing
+    regulated: false
+    label: Marketing & Sales
+  - id: ecommerce
+    regulated: false
+    label: E-commerce & Retail
+  - id: education
+    regulated: false
+    label: Education & Training
+  - id: software_dev
+    regulated: false
+    label: Software Development
+  - id: media_content
+    regulated: false
+    label: Media & Content
+  - id: operations
+    regulated: false
+    label: Operations & Logistics
+  - id: customer_service
+    regulated: false
+    label: Customer Service
+  - id: research
+    regulated: false
+    label: Research & Analysis
+  - id: construction
+    regulated: false
+    label: Construction & Engineering
+  - id: agriculture
+    regulated: false
+    label: Agriculture
+  - id: energy
+    regulated: true
+    label: Energy & Utilities
+  - id: government
+    regulated: true
+    label: Government & Public Sector

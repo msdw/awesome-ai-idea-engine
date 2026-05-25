@@ -1,0 +1,334 @@
+# Curated AI ideas database
+# Schema: each idea follows the structure below
+# Status values: candidate | needs_review | accepted | rejected | duplicate | deprecated
+# All accepted ideas have been reviewed by a maintainer
+
+ideas:
+  - id: ai_contract_review_freelancers
+    title: AI contract review assistant for freelancers
+    summary: >
+      A tool that helps freelancers review client contracts by extracting key clauses,
+      flagging unusual or risky terms, and summarizing obligations in plain language.
+    category: ai_saas
+    target_users:
+      - freelancer
+      - consultant
+    target_buyers:
+      - Freelancers (self-serve)
+      - Freelance platform operators
+    industries:
+      - legal
+    pain_points:
+      - Freelancers receive contracts they do not fully understand
+      - Hiring a lawyer to review a contract costs $300-500+ for simple documents
+      - Freelancers sign risky clauses unknowingly (IP assignment, non-compete, liability)
+    ai_solution:
+      - Extract key clauses (payment terms, IP ownership, termination, non-compete)
+      - Flag unusual or potentially risky terms compared to standard freelance contracts
+      - Summarize each clause in plain language
+      - Score overall contract risk
+    ai_patterns:
+      - extraction
+      - classification
+      - summarization
+    possible_business_models:
+      - subscription_saas
+      - freemium
+      - usage_based_api
+    technical_stack:
+      - openai_api
+      - anthropic_api
+      - python
+      - fastapi
+    validation_methods:
+      - landing_page
+      - customer_interviews
+      - forum_research
+    validation_steps:
+      - Search Reddit r/freelance for contract complaints — quantify volume
+      - Interview 10 freelancers about their contract review process
+      - Build a landing page, measure signups in 2 weeks
+      - Test with 5 real contracts manually before automating
+    difficulty: medium
+    time_to_mvp: "4-8 weeks"
+    risk_level: high
+    compliance_notes: >
+      This tool must not be marketed as legal advice. Users should be clearly
+      informed that AI contract review is not a substitute for a licensed attorney.
+      Add prominent disclaimer. Regulated in some jurisdictions.
+    scoring:
+      pain_intensity: 8
+      willingness_to_pay: 7
+      ai_fit: 9
+      buildability: 7
+      market_signal: 8
+      differentiation_potential: 6
+      monetization_potential: 7
+      compliance_risk: 7
+    tags:
+      - legal_tech
+      - document_processing
+      - b2b
+      - b2c
+    source: community
+    status: accepted
+
+  - id: ai_job_description_analyzer_candidates
+    title: AI job description analyzer for candidates
+    summary: >
+      A tool that analyzes job descriptions and tells candidates what skills are
+      actually required, what the salary range likely is, which red flags exist,
+      and how well their profile matches the role.
+    category: ai_saas
+    target_users:
+      - developer
+      - student
+      - consultant
+    target_buyers:
+      - Job seekers (self-serve)
+      - Career coaching platforms
+      - Recruiting tools
+    industries:
+      - hr_recruiting
+    pain_points:
+      - Job descriptions are often vague, inflated, or misleading
+      - Candidates spend hours applying to roles they are not qualified for
+      - Salary information is often hidden or inconsistent
+    ai_solution:
+      - Extract required vs. nice-to-have skills
+      - Estimate market salary range based on signals in the description
+      - Flag red flags (unpaid trial, unusual requirements, culture warning signs)
+      - Score candidate fit if they paste their resume
+    ai_patterns:
+      - extraction
+      - classification
+      - summarization
+    possible_business_models:
+      - freemium
+      - subscription_saas
+      - marketplace_listing
+    technical_stack:
+      - openai_api
+      - python
+      - nextjs
+    validation_methods:
+      - landing_page
+      - forum_research
+      - content_test
+    validation_steps:
+      - Post on r/cscareerquestions — measure interest
+      - Build a free version, measure daily active users
+      - Test salary estimation accuracy on 50 real job postings
+    difficulty: low
+    time_to_mvp: "1-3 weeks"
+    risk_level: low
+    scoring:
+      pain_intensity: 7
+      willingness_to_pay: 5
+      ai_fit: 8
+      buildability: 9
+      market_signal: 7
+      differentiation_potential: 5
+      monetization_potential: 5
+      compliance_risk: 3
+    tags:
+      - hr_tools
+      - b2c
+      - productivity
+    source: community
+    status: accepted
+
+  - id: ai_meeting_notes_crm_sync
+    title: AI meeting notes to CRM sync
+    summary: >
+      A tool that automatically converts meeting transcripts (Zoom, Teams, Meet)
+      into structured CRM entries — contact notes, action items, deal stage updates,
+      and follow-up tasks.
+    category: ai_automation
+    target_users:
+      - sales
+      - consultant
+    target_buyers:
+      - Sales teams
+      - CRM vendors (white-label)
+      - SMB owners
+    industries:
+      - marketing
+      - operations
+    pain_points:
+      - Sales reps spend 20-40 minutes per meeting manually updating CRM
+      - Meeting notes are inconsistent and key context gets lost
+      - Action items from calls are often forgotten
+    ai_solution:
+      - Transcribe meeting audio (or accept existing transcript)
+      - Extract: participants, discussed topics, decisions, action items, next steps
+      - Map extracted data to CRM fields (HubSpot, Salesforce, Pipedrive)
+      - Create or update CRM records via API
+    ai_patterns:
+      - extraction
+      - workflow_automation
+      - summarization
+    possible_business_models:
+      - subscription_saas
+      - usage_based_api
+      - productized_service
+    technical_stack:
+      - openai_api
+      - python
+      - fastapi
+      - n8n
+    validation_methods:
+      - pilot_client
+      - customer_interviews
+      - cold_outreach
+    validation_steps:
+      - Interview 5 sales reps about CRM update habits
+      - Build manual concierge version — test with 1 pilot client
+      - Measure time saved per meeting
+    difficulty: medium
+    time_to_mvp: "3-6 weeks"
+    risk_level: medium
+    scoring:
+      pain_intensity: 9
+      willingness_to_pay: 8
+      ai_fit: 9
+      buildability: 7
+      market_signal: 9
+      differentiation_potential: 5
+      monetization_potential: 8
+      compliance_risk: 4
+    tags:
+      - sales_automation
+      - workflow
+      - b2b
+      - automation
+    source: community
+    status: accepted
+
+  - id: ai_onboarding_document_generator
+    title: AI employee onboarding document generator
+    summary: >
+      A tool that generates customized employee onboarding documents, checklists,
+      and guides based on the role, department, and company information provided.
+    category: ai_tools_devs
+    target_users:
+      - hr_manager
+      - operations
+    target_buyers:
+      - HR teams at SMBs
+      - HR software vendors
+    industries:
+      - hr_recruiting
+    pain_points:
+      - Creating onboarding documents from scratch takes 4-8 hours per new hire
+      - Generic templates do not fit the specific role or team context
+      - Onboarding quality varies widely across hiring managers
+    ai_solution:
+      - Accept structured input (role, team, tools, key contacts, goals)
+      - Generate customized 30/60/90 day plan, welcome guide, checklist, and FAQs
+      - Output in editable markdown or Google Docs format
+    ai_patterns:
+      - generation
+      - workflow_automation
+    possible_business_models:
+      - subscription_saas
+      - freemium
+      - productized_service
+    technical_stack:
+      - openai_api
+      - python
+      - nextjs
+    validation_methods:
+      - landing_page
+      - customer_interviews
+      - pilot_client
+    validation_steps:
+      - Interview 5 HR managers about onboarding document creation time
+      - Build free tool and measure signups
+      - Test output quality with 3 real HR teams
+    difficulty: low
+    time_to_mvp: "2-4 weeks"
+    risk_level: low
+    scoring:
+      pain_intensity: 6
+      willingness_to_pay: 6
+      ai_fit: 8
+      buildability: 9
+      market_signal: 6
+      differentiation_potential: 5
+      monetization_potential: 6
+      compliance_risk: 2
+    tags:
+      - hr_tools
+      - automation
+      - b2b
+      - content_creation
+    source: community
+    status: accepted
+
+  - id: ai_rfp_response_assistant
+    title: AI RFP response assistant for agencies
+    summary: >
+      A tool that helps agencies and consultancies respond to RFPs (requests for proposal)
+      faster by extracting requirements, matching against past proposals, and generating
+      draft responses for review.
+    category: ai_saas
+    target_users:
+      - consultant
+      - indie_builder
+    target_buyers:
+      - Agencies (marketing, IT, consulting)
+      - Government contractors
+      - Professional services firms
+    industries:
+      - marketing
+      - operations
+    pain_points:
+      - Responding to RFPs takes 20-60 hours of skilled work per proposal
+      - Teams rewrite similar sections from scratch repeatedly
+      - Past proposals are poorly organized and hard to reuse
+    ai_solution:
+      - Parse and extract requirements from RFP documents
+      - Match requirements to relevant past proposal sections
+      - Generate draft responses using past content and templates
+      - Track compliance with RFP requirements (checklist)
+    ai_patterns:
+      - extraction
+      - rag_assistant
+      - generation
+    possible_business_models:
+      - subscription_saas
+      - project_fee
+      - done_for_you
+    technical_stack:
+      - openai_api
+      - llamaindex
+      - pinecone
+      - python
+    validation_methods:
+      - pilot_client
+      - cold_outreach
+      - customer_interviews
+    validation_steps:
+      - Find 3 agencies that respond to RFPs regularly
+      - Test with a real RFP document
+      - Measure time saved on first proposal
+    difficulty: medium
+    time_to_mvp: "4-8 weeks"
+    risk_level: medium
+    scoring:
+      pain_intensity: 9
+      willingness_to_pay: 9
+      ai_fit: 9
+      buildability: 7
+      market_signal: 8
+      differentiation_potential: 7
+      monetization_potential: 9
+      compliance_risk: 3
+    tags:
+      - b2b
+      - document_processing
+      - automation
+      - enterprise
+    source: community
+    status: accepted

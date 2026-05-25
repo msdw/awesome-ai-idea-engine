@@ -1,0 +1,36 @@
+# Target role taxonomy
+roles:
+  - id: indie_builder
+    label: Indie Builder / Solopreneur
+  - id: freelancer
+    label: Freelancer
+  - id: consultant
+    label: Consultant
+  - id: startup_founder
+    label: Startup Founder
+  - id: product_manager
+    label: Product Manager
+  - id: developer
+    label: Developer / Engineer
+  - id: data_scientist
+    label: Data Scientist / ML Engineer
+  - id: designer
+    label: Designer / UX
+  - id: marketer
+    label: Marketer / Growth
+  - id: sales
+    label: Sales / BD
+  - id: operations
+    label: Operations Manager
+  - id: hr_manager
+    label: HR Manager
+  - id: legal_professional
+    label: Legal Professional
+  - id: finance_professional
+    label: Finance Professional
+  - id: researcher
+    label: Researcher
+  - id: student
+    label: Student / Learner
+  - id: innovation_team
+    label: Innovation / R&D Team

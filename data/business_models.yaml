@@ -1,0 +1,57 @@
+# Business model taxonomy for AI ideas
+business_models:
+  - id: subscription_saas
+    label: Subscription SaaS
+    description: Recurring monthly or annual subscription for software access
+
+  - id: usage_based_api
+    label: Usage-based API
+    description: Pay-per-call or token-based pricing for API access
+
+  - id: freemium
+    label: Freemium
+    description: Free tier with paid upgrade for more features or usage
+
+  - id: consulting_retainer
+    label: Consulting Retainer
+    description: Monthly retainer for ongoing consulting or advisory services
+
+  - id: project_fee
+    label: Project Fee
+    description: One-time fixed price for a defined scope of work
+
+  - id: productized_service
+    label: Productized Service
+    description: Fixed-scope, fixed-price service delivered repeatedly
+
+  - id: done_for_you
+    label: Done-for-You (DFY)
+    description: Full delivery of AI implementation on behalf of the client
+
+  - id: done_with_you
+    label: Done-with-You (DWY)
+    description: Collaborative implementation with client involvement
+
+  - id: training_workshop
+    label: Training & Workshop
+    description: Live or recorded training sessions and workshops
+
+  - id: marketplace_listing
+    label: Marketplace Listing
+    description: Product or service listed on a third-party marketplace
+
+  - id: licensing
+    label: Licensing
+    description: License to use IP, models, or software
+
+  - id: revenue_share
+    label: Revenue Share
+    description: Fee based on a percentage of client revenue generated
+
+  - id: audit_assessment
+    label: Audit & Assessment
+    description: One-time diagnostic report or audit deliverable
+
+  - id: platform_fee
+    label: Platform Fee
+    description: Transaction or platform fee on activity through the product

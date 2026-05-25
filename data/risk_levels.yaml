@@ -1,0 +1,17 @@
+# Risk level taxonomy
+risk_levels:
+  - id: low
+    label: Low
+    description: Minimal technical, market, or compliance risk. Good for first-time builders.
+
+  - id: medium
+    label: Medium
+    description: Some technical complexity or market uncertainty. Requires validation.
+
+  - id: high
+    label: High
+    description: Significant technical, market, or compliance challenges. Experienced builders.
+
+  - id: very_high
+    label: Very High
+    description: Regulated domain, highly competitive market, or complex AI requirements.

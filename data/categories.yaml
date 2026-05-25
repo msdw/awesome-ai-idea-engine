@@ -1,0 +1,45 @@
+# AI idea categories taxonomy
+categories:
+  - id: ai_saas
+    label: AI SaaS
+    description: Subscription software products powered by AI
+
+  - id: ai_agents
+    label: AI Agents
+    description: Autonomous or semi-autonomous AI agents that perform tasks
+
+  - id: ai_automation
+    label: AI Automation
+    description: Workflow and process automation using AI
+
+  - id: ai_consulting
+    label: AI Consulting & Services
+    description: Professional services that deliver AI implementations
+
+  - id: ai_tools_devs
+    label: AI Tools for Developers
+    description: APIs, libraries, and platforms for AI builders
+
+  - id: ai_internal_tools
+    label: AI Internal Tools
+    description: AI tools built for internal use inside companies
+
+  - id: ai_content
+    label: AI Content & Media
+    description: AI applied to content creation, editing, and distribution
+
+  - id: ai_data
+    label: AI Data & Analytics
+    description: AI applied to data processing, analysis, and insights
+
+  - id: ai_education
+    label: AI Education & Training
+    description: AI tools for learning, coaching, and skill development
+
+  - id: ai_vertical
+    label: AI Vertical Solutions
+    description: AI products built for a specific industry or domain
+
+  - id: ai_infrastructure
+    label: AI Infrastructure
+    description: Platforms, pipelines, and infrastructure for AI deployment

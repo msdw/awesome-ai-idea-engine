@@ -1,0 +1,35 @@
+# Validation method taxonomy
+validation_methods:
+  - id: landing_page
+    label: Landing page test
+    description: Build a landing page and measure signups or clicks before building
+  - id: customer_interviews
+    label: Customer interviews
+    description: Talk to 5-10 target users to validate the pain point
+  - id: fake_door_test
+    label: Fake door test
+    description: Offer the product without building it; measure conversion
+  - id: manual_concierge
+    label: Manual concierge MVP
+    description: Deliver the service manually before automating
+  - id: waitlist
+    label: Waitlist
+    description: Build a waitlist; measure conversion and engagement
+  - id: cold_outreach
+    label: Cold outreach
+    description: Contact potential buyers directly and measure response rate
+  - id: forum_research
+    label: Forum research
+    description: Find evidence of the pain on Reddit, Slack, Discord, LinkedIn
+  - id: job_board_signal
+    label: Job board signal
+    description: Check if companies are hiring for the pain this product solves
+  - id: competitor_analysis
+    label: Competitor analysis
+    description: Map existing competitors — their presence validates the market
+  - id: pilot_client
+    label: Pilot client
+    description: Find one client willing to pay for an early version
+  - id: content_test
+    label: Content test
+    description: Write about the problem and measure engagement/comments

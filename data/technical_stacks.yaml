@@ -1,0 +1,62 @@
+# Technical stack taxonomy
+technical_stacks:
+  - id: openai_api
+    label: OpenAI API
+    type: llm_api
+  - id: anthropic_api
+    label: Anthropic API (Claude)
+    type: llm_api
+  - id: google_gemini
+    label: Google Gemini API
+    type: llm_api
+  - id: open_source_llm
+    label: Open-source LLM (Llama, Mistral, etc.)
+    type: llm_self_hosted
+  - id: langchain
+    label: LangChain
+    type: framework
+  - id: llamaindex
+    label: LlamaIndex
+    type: framework
+  - id: huggingface
+    label: Hugging Face
+    type: model_hub
+  - id: pinecone
+    label: Pinecone
+    type: vector_db
+  - id: weaviate
+    label: Weaviate
+    type: vector_db
+  - id: qdrant
+    label: Qdrant
+    type: vector_db
+  - id: chroma
+    label: ChromaDB
+    type: vector_db
+  - id: supabase
+    label: Supabase (pgvector)
+    type: vector_db
+  - id: n8n
+    label: n8n
+    type: automation
+  - id: make
+    label: Make (Integromat)
+    type: automation
+  - id: zapier
+    label: Zapier
+    type: automation
+  - id: fastapi
+    label: FastAPI
+    type: backend
+  - id: nextjs
+    label: Next.js
+    type: frontend
+  - id: python
+    label: Python
+    type: language
+  - id: typescript
+    label: TypeScript / Node.js
+    type: language
+  - id: vercel_ai_sdk
+    label: Vercel AI SDK
+    type: framework

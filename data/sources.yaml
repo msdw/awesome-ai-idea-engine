@@ -1,0 +1,44 @@
+# Sources used for automated idea discovery
+sources:
+  github_trending:
+    type: github
+    description: GitHub trending repositories in AI/ML
+    url: https://github.com/trending?l=python&since=weekly
+    frequency: weekly
+
+  github_awesome_lists:
+    type: github
+    description: Awesome AI-related curated lists on GitHub
+    search_query: "awesome AI" OR "awesome LLM" OR "awesome agents"
+    frequency: weekly
+
+  arxiv_cs_ai:
+    type: arxiv
+    description: Recent CS.AI papers with practical applications
+    url: https://arxiv.org/list/cs.AI/recent
+    frequency: weekly
+
+  reddit_entrepreneur:
+    type: reddit
+    description: r/entrepreneur posts about AI tools and services
+    subreddit: entrepreneur
+    search: "AI" OR "LLM" OR "automation"
+    frequency: weekly
+
+  reddit_saas:
+    type: reddit
+    description: r/SaaS posts about AI product ideas
+    subreddit: SaaS
+    frequency: weekly
+
+  producthunt_ai:
+    type: producthunt
+    description: Product Hunt AI launches
+    url: https://www.producthunt.com/topics/artificial-intelligence
+    frequency: weekly
+
+  hacker_news:
+    type: hn
+    description: Hacker News Show HN posts about AI tools
+    search: "Show HN" AI
+    frequency: weekly

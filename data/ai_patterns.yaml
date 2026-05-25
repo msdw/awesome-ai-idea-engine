@@ -1,0 +1,69 @@
+# AI technical patterns taxonomy
+ai_patterns:
+  - id: rag_assistant
+    label: RAG Assistant
+    description: Retrieval-augmented generation — LLM with access to a document corpus
+
+  - id: ai_agent
+    label: AI Agent
+    description: Autonomous agent that uses tools and takes multi-step actions
+
+  - id: classification
+    label: Classification
+    description: ML model that assigns inputs to predefined categories
+
+  - id: extraction
+    label: Information Extraction
+    description: Structured data extraction from unstructured text or documents
+
+  - id: summarization
+    label: Summarization
+    description: Condensing long content into shorter summaries
+
+  - id: generation
+    label: Content Generation
+    description: Generating text, images, code, or other content from prompts
+
+  - id: semantic_search
+    label: Semantic Search
+    description: Similarity-based search using embeddings
+
+  - id: recommendation
+    label: Recommendation
+    description: Suggesting relevant items or actions based on context
+
+  - id: workflow_automation
+    label: Workflow Automation
+    description: Automating multi-step processes using AI decision points
+
+  - id: anomaly_detection
+    label: Anomaly Detection
+    description: Identifying unusual patterns in data
+
+  - id: forecasting
+    label: Forecasting
+    description: Predicting future values from historical data
+
+  - id: nlp_processing
+    label: NLP Processing
+    description: Natural language processing — sentiment, intent, entity recognition
+
+  - id: computer_vision
+    label: Computer Vision
+    description: Image or video analysis using vision models
+
+  - id: voice_speech
+    label: Voice & Speech
+    description: Speech-to-text, text-to-speech, voice recognition
+
+  - id: code_generation
+    label: Code Generation
+    description: Generating, completing, or reviewing code
+
+  - id: multi_modal
+    label: Multi-modal
+    description: Combining text, image, audio, or other modalities
+
+  - id: fine_tuned_model
+    label: Fine-tuned Model
+    description: Custom-trained or fine-tuned model for a specific domain
