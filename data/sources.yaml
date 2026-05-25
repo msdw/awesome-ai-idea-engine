@@ -9,7 +9,7 @@ sources:
   github_awesome_lists:
     type: github
     description: Awesome AI-related curated lists on GitHub
-    search_query: "awesome AI" OR "awesome LLM" OR "awesome agents"
+    search_query: 'awesome AI OR awesome LLM OR awesome agents'
     frequency: weekly
 
   arxiv_cs_ai:
@@ -22,7 +22,7 @@ sources:
     type: reddit
     description: r/entrepreneur posts about AI tools and services
     subreddit: entrepreneur
-    search: "AI" OR "LLM" OR "automation"
+    search: 'AI OR LLM OR automation'
     frequency: weekly
 
   reddit_saas:
@@ -40,5 +40,5 @@ sources:
   hacker_news:
     type: hn
     description: Hacker News Show HN posts about AI tools
-    search: "Show HN" AI
+    search: 'Show HN AI'
     frequency: weekly
