@@ -1,0 +1,57 @@
+name: Weekly Sources Update
+
+# Runs every Sunday at 06:00 UTC — before the Monday weekly discovery at 07:00 UTC.
+# Searches for new source candidates (GitHub awesome lists, HN resource threads)
+# and proposes them as candidates in data/sources.yaml via a pull request.
+# Maintainer reviews the PR and sets `status: active` on sources worth keeping.
+
+on:
+  schedule:
+    - cron: "0 6 * * 0"
+  workflow_dispatch:
+
+jobs:
+  update-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Discover new source candidates
+        run: python scripts/update_sources.py
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: weekly sources update"
+          branch: auto/weekly-sources-update
+          title: "[Auto] Weekly sources — new source candidates"
+          body: |
+            ## Automated sources update
+
+            This PR was created automatically by the weekly sources update workflow.
+
+            **What's in this PR:**
+            - New source candidates added to `data/sources.yaml` with `status: candidate`
+
+            **What to do:**
+            1. Review each new entry in `data/sources.yaml` (look for `status: candidate`)
+            2. Change `status: active` for sources that look valuable
+            3. Change `status: paused` or delete entries that aren't relevant
+            4. Merge when satisfied
+
+            **Why this matters:**
+            Active sources are used by `discover_new_ideas.py` as GitHub search queries
+            and HN search queries — the richer your sources list, the more diverse
+            and relevant the daily discovery candidates will be.
+          labels: automated, sources, needs-review
+          draft: false

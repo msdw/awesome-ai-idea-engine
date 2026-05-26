@@ -1,44 +1,148 @@
 # Sources used for automated idea discovery
+# Fields:
+#   type: github | hn | reddit | producthunt | web | arxiv | newsletter
+#   status: active | candidate | paused
+#   search_query: used directly in GitHub/HN API calls
+#   url: for web/scrape type sources
+#   frequency: daily | weekly
+#   added_at: ISO date
 sources:
-  github_trending:
+  github_llm_tools:
     type: github
-    description: GitHub trending repositories in AI/ML
-    url: https://github.com/trending?l=python&since=weekly
-    frequency: weekly
+    description: GitHub repos — LLM tools, agents, and AI apps
+    search_query: "llm OR rag OR 'ai agent' OR 'ai automation' language:python"
+    frequency: daily
+    status: active
+    added_at: "2026-05-01"
 
-  github_awesome_lists:
+  github_ai_saas:
     type: github
-    description: Awesome AI-related curated lists on GitHub
-    search_query: 'awesome AI OR awesome LLM OR awesome agents'
-    frequency: weekly
+    description: GitHub repos — AI SaaS starters and boilerplates
+    search_query: "ai saas starter OR ai boilerplate OR llm app template"
+    frequency: daily
+    status: active
+    added_at: "2026-05-01"
 
-  arxiv_cs_ai:
-    type: arxiv
-    description: Recent CS.AI papers with practical applications
-    url: https://arxiv.org/list/cs.AI/recent
+  github_awesome_ai:
+    type: github
+    description: Awesome AI curated lists
+    search_query: "awesome llm OR awesome ai agents OR awesome ai apps"
     frequency: weekly
+    status: active
+    added_at: "2026-05-01"
+
+  github_openai_tools:
+    type: github
+    description: OpenAI / Anthropic ecosystem tools
+    search_query: "openai assistant OR anthropic claude tool OR gemini agent"
+    frequency: daily
+    status: active
+    added_at: "2026-05-01"
+
+  github_ai_startups:
+    type: github
+    description: AI startup open-source projects
+    search_query: "ai startup OR ai product ideas list"
+    frequency: weekly
+    status: active
+    added_at: "2026-05-26"
+
+  hn_show_ai:
+    type: hn
+    description: Hacker News Show HN — AI tools
+    search_query: "Show HN AI tool"
+    frequency: daily
+    status: active
+    added_at: "2026-05-01"
+
+  hn_show_llm:
+    type: hn
+    description: Hacker News Show HN — LLM apps
+    search_query: "Show HN LLM"
+    frequency: daily
+    status: active
+    added_at: "2026-05-01"
+
+  hn_show_gpt:
+    type: hn
+    description: Hacker News Show HN — GPT tools
+    search_query: "Show HN GPT"
+    frequency: daily
+    status: active
+    added_at: "2026-05-01"
+
+  hn_ask_ai_ideas:
+    type: hn
+    description: HN Ask HN — AI business ideas
+    search_query: "Ask HN AI business ideas"
+    frequency: weekly
+    status: active
+    added_at: "2026-05-26"
 
   reddit_entrepreneur:
     type: reddit
     description: r/entrepreneur posts about AI tools and services
     subreddit: entrepreneur
-    search: 'AI OR LLM OR automation'
+    search_query: "AI OR LLM OR automation"
+    url: "https://www.reddit.com/r/entrepreneur/search/?q=AI+LLM&sort=new"
     frequency: weekly
+    status: active
+    added_at: "2026-05-01"
 
   reddit_saas:
     type: reddit
     description: r/SaaS posts about AI product ideas
     subreddit: SaaS
+    url: "https://www.reddit.com/r/SaaS/search/?q=AI&sort=new"
     frequency: weekly
+    status: active
+    added_at: "2026-05-01"
+
+  reddit_sidehustle:
+    type: reddit
+    description: r/SideProject AI launches
+    subreddit: SideProject
+    url: "https://www.reddit.com/r/SideProject/search/?q=AI&sort=new"
+    frequency: weekly
+    status: active
+    added_at: "2026-05-26"
 
   producthunt_ai:
     type: producthunt
     description: Product Hunt AI launches
-    url: https://www.producthunt.com/topics/artificial-intelligence
-    frequency: weekly
+    url: "https://www.producthunt.com/topics/artificial-intelligence"
+    frequency: daily
+    status: active
+    added_at: "2026-05-01"
 
-  hacker_news:
-    type: hn
-    description: Hacker News Show HN posts about AI tools
-    search: 'Show HN AI'
+  arxiv_cs_ai:
+    type: arxiv
+    description: Recent CS.AI papers with practical applications
+    url: "https://arxiv.org/list/cs.AI/recent"
     frequency: weekly
+    status: active
+    added_at: "2026-05-01"
+
+  arxiv_cs_lg:
+    type: arxiv
+    description: Recent CS.LG machine learning papers
+    url: "https://arxiv.org/list/cs.LG/recent"
+    frequency: weekly
+    status: active
+    added_at: "2026-05-26"
+
+  theresanaiforthat:
+    type: web
+    description: "There's An AI For That — new AI tools directory"
+    url: "https://theresanaiforthat.com/most-saved/"
+    frequency: weekly
+    status: active
+    added_at: "2026-05-26"
+
+  futurepedia:
+    type: web
+    description: Futurepedia AI tools directory
+    url: "https://www.futurepedia.io/ai-tools"
+    frequency: weekly
+    status: active
+    added_at: "2026-05-26"

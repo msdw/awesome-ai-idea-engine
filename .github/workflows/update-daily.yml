@@ -1,9 +1,8 @@
 name: Daily Discovery Update
 
 on:
-  # Disabled by default — uncomment to activate
-  # schedule:
-  #   - cron: "0 7 * * *"
+  schedule:
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 jobs:

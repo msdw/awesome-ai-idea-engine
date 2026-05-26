@@ -24,6 +24,30 @@ AI_KEYWORDS = [
 ]
 
 
+def load_active_sources() -> dict:
+    """Load active sources from data/sources.yaml."""
+    try:
+        import yaml
+        sources_path = DATA / "sources.yaml"
+        if not sources_path.exists():
+            return {"github": [], "hn": []}
+        with open(sources_path, encoding="utf-8") as f:
+            data = yaml.safe_load(f) or {}
+        github_queries = []
+        hn_queries = []
+        for src in data.get("sources", {}).values():
+            if src.get("status", "active") != "active":
+                continue
+            if src.get("type") == "github" and "search_query" in src:
+                github_queries.append(src["search_query"])
+            elif src.get("type") == "hn" and "search_query" in src:
+                hn_queries.append(src["search_query"])
+        return {"github": github_queries, "hn": hn_queries}
+    except Exception as e:
+        print(f"  Warning: could not load sources.yaml: {e}", file=sys.stderr)
+        return {"github": [], "hn": []}
+
+
 def fetch_json(url: str, token: str = None) -> dict | list | None:
     headers = {"User-Agent": "awesome-ai-idea-engine/1.0"}
     if token:
@@ -38,92 +62,114 @@ def fetch_json(url: str, token: str = None) -> dict | list | None:
 
 
 def discover_from_github(mode: str, dry_run: bool) -> list[dict]:
-    """Discover AI repos from GitHub trending."""
-    print("\n[GitHub] Searching trending AI repositories...")
+    """Discover AI repos from GitHub — uses queries from sources.yaml + fallback defaults."""
+    print("\n[GitHub] Searching AI repositories...")
     candidates = []
 
-    # GitHub trending (scrape is unreliable — use search API instead)
-    query = "llm OR rag OR 'ai agent' OR 'ai automation' language:python"
+    # Load queries from sources.yaml (active github sources)
+    active = load_active_sources()
+    queries = active["github"] if active["github"] else [
+        "llm OR rag OR 'ai agent' OR 'ai automation' language:python"
+    ]
+    # Deduplicate
+    queries = list(dict.fromkeys(queries))
+
     since_days = 7 if mode == "weekly" else 1
     since = (datetime.datetime.utcnow() - datetime.timedelta(days=since_days)).strftime("%Y-%m-%d")
-    url = f"{GITHUB_API}/search/repositories?q={query.replace(' ', '+')}+created:>{since}&sort=stars&per_page=20"
 
-    data = fetch_json(url)
-    if not data:
-        return candidates
-
-    for repo in data.get("items", []):
-        name = repo.get("full_name", "")
-        desc = repo.get("description") or ""
-        stars = repo.get("stargazers_count", 0)
-        topics = repo.get("topics", [])
-        url_html = repo.get("html_url", "")
-
-        if stars < 50:
+    seen_repos: set = set()
+    for query in queries:
+        url = f"{GITHUB_API}/search/repositories?q={query.replace(' ', '+')}+created:>{since}&sort=stars&per_page=15"
+        data = fetch_json(url)
+        if not data:
+            time.sleep(1)
             continue
 
-        candidate = {
-            "id": f"candidate_{name.replace('/', '_').lower()}",
-            "title": f"{repo.get('name', '')} — {desc[:80]}",
-            "summary": desc or "No description available",
-            "category": "ai_saas",
-            "target_users": ["developer"],
-            "pain_points": ["See repository description"],
-            "ai_solution": ["See repository description"],
-            "ai_patterns": ["generation"],
-            "possible_business_models": ["subscription_saas"],
-            "technical_stack": ["openai_api", "python"],
-            "validation_methods": ["forum_research"],
-            "validation_steps": ["Review repository README and issues"],
-            "difficulty": "medium",
-            "time_to_mvp": "unknown",
-            "risk_level": "medium",
-            "scoring": {
-                "pain_intensity": 5, "willingness_to_pay": 5, "ai_fit": 7,
-                "buildability": 6, "market_signal": stars // 100,
-                "differentiation_potential": 5, "monetization_potential": 5,
-                "compliance_risk": 3
-            },
-            "tags": topics[:5] or ["automation"],
-            "source": url_html,
-            "status": "candidate",
-            "_discovery_meta": {
-                "source": "github",
-                "stars": stars,
-                "discovered_at": datetime.datetime.utcnow().isoformat()
-            }
-        }
-        candidates.append(candidate)
-        print(f"  Found: {name} ({stars} stars)")
-        time.sleep(0.3)
+            for repo in data.get("items", []):
+                name = repo.get("full_name", "")
+                if name in seen_repos:
+                    continue
+                desc = repo.get("description") or ""
+                stars = repo.get("stargazers_count", 0)
+                topics = repo.get("topics", [])
+                url_html = repo.get("html_url", "")
+
+                if stars < 50:
+                    continue
+
+                candidate = {
+                    "id": f"candidate_{name.replace('/', '_').lower()}",
+                    "title": f"{repo.get('name', '')} — {desc[:80]}",
+                    "summary": desc or "No description available",
+                    "category": "ai_saas",
+                    "target_users": ["developer"],
+                    "pain_points": ["See repository description"],
+                    "ai_solution": ["See repository description"],
+                    "ai_patterns": ["generation"],
+                    "possible_business_models": ["subscription_saas"],
+                    "technical_stack": ["openai_api", "python"],
+                    "validation_methods": ["forum_research"],
+                    "validation_steps": ["Review repository README and issues"],
+                    "difficulty": "medium",
+                    "time_to_mvp": "unknown",
+                    "risk_level": "medium",
+                    "scoring": {
+                        "pain_intensity": 5, "willingness_to_pay": 5, "ai_fit": 7,
+                        "buildability": 6, "market_signal": stars // 100,
+                        "differentiation_potential": 5, "monetization_potential": 5,
+                        "compliance_risk": 3
+                    },
+                    "tags": topics[:5] or ["automation"],
+                    "source": url_html,
+                    "status": "candidate",
+                    "_discovery_meta": {
+                        "source": "github",
+                        "stars": stars,
+                        "query": query,
+                        "discovered_at": datetime.datetime.utcnow().isoformat()
+                    }
+                }
+                candidates.append(candidate)
+                seen_repos.add(name)
+                print(f"  Found: {name} ({stars} stars)")
+            time.sleep(0.3)
 
     return candidates
 
 
 def discover_from_hn(mode: str, dry_run: bool) -> list[dict]:
-    """Discover AI ideas from Hacker News Show HN posts."""
+    """Discover AI ideas from Hacker News Show HN posts — uses queries from sources.yaml."""
     print("\n[HN] Searching Show HN posts...")
     candidates = []
 
     days_back = 7 if mode == "weekly" else 1
     from_ts = int((datetime.datetime.utcnow() - datetime.timedelta(days=days_back)).timestamp())
 
-    for kw in ["AI tool", "LLM", "GPT", "RAG assistant"]:
+    # Load HN queries from sources.yaml, fall back to defaults
+    active = load_active_sources()
+    hn_queries = active["hn"] if active["hn"] else ["Show HN AI tool", "Show HN LLM", "Show HN GPT"]
+    hn_queries = list(dict.fromkeys(hn_queries))
+
+    seen_ids: set = set()
+    for kw in hn_queries:
         url = f"{HN_SEARCH_API}/search?query=Show+HN+{kw.replace(' ', '+')}&tags=show_hn&numericFilters=created_at_i>{from_ts}&hitsPerPage=10"
         data = fetch_json(url)
         if not data:
             continue
 
         for hit in data.get("hits", []):
+            obj_id = hit.get("objectID", "")
+            if obj_id in seen_ids:
+                continue
             title = hit.get("title", "")
-            story_url = hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID')}"
+            story_url = hit.get("url") or f"https://news.ycombinator.com/item?id={obj_id}"
             points = hit.get("points", 0)
 
             if points < 10:
                 continue
 
             candidate = {
-                "id": f"candidate_hn_{hit.get('objectID', '')}",
+                "id": f"candidate_hn_{obj_id}",
                 "title": title,
                 "summary": f"HN Show HN: {title}. Source: {story_url}",
                 "category": "ai_tools_devs",
@@ -150,10 +196,12 @@ def discover_from_hn(mode: str, dry_run: bool) -> list[dict]:
                 "_discovery_meta": {
                     "source": "hacker_news",
                     "points": points,
+                    "query": kw,
                     "discovered_at": datetime.datetime.utcnow().isoformat()
                 }
             }
             candidates.append(candidate)
+            seen_ids.add(obj_id)
             print(f"  Found: {title[:80]} ({points} pts)")
         time.sleep(0.5)
 
