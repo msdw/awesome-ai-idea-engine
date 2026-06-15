@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Discover new AI idea candidates from public sources."""
+import os
 import sys
 import json
 import argparse
@@ -14,6 +15,7 @@ ROOT = Path(__file__).parent.parent
 DATA = ROOT / "data"
 
 GITHUB_API = "https://api.github.com"
+_GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 HN_API = "https://hacker-news.firebaseio.com/v0"
 HN_SEARCH_API = "https://hn.algolia.com/api/v1"
 
