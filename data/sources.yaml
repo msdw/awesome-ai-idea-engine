@@ -1,146 +1,303 @@
-# Sources for automated AI idea discovery
-# Maintain this file: set status: active to use a source in daily/weekly discovery.
-# The discover_new_ideas.py script reads github/hn type sources with search_query.
-# Web/reddit/producthunt sources are logged for manual review.
-#
-# Status values: active | paused | candidate
-# Frequencies:   daily  | weekly
-
 sources:
-
-  # ── GitHub API searches (authenticated, 5000 req/h) ──────────────────────────
-
   github_llm_apps:
     type: github
     description: LLM-powered apps — agents, assistants, automation tools
-    search_query: "llm app OR ai agent OR rag pipeline language:python stars:>50"
+    search_query: llm app OR ai agent OR rag pipeline language:python stars:>50
     frequency: daily
     status: active
-    added_at: "2026-05-01"
+    added_at: '2026-05-01'
     notes: High signal — actively built Python repos with traction
-
   github_ai_tools_shipped:
     type: github
     description: Shipped AI SaaS tools and micro-products
-    search_query: "ai tool OR ai saas OR ai automation language:typescript stars:>30"
+    search_query: ai tool OR ai saas OR ai automation language:typescript stars:>30
     frequency: daily
     status: active
-    added_at: "2026-05-26"
+    added_at: '2026-05-26'
     notes: TypeScript covers Next.js / Vercel indie SaaS tier
-
   github_openai_anthropic_apps:
     type: github
     description: Apps built on OpenAI / Anthropic / Gemini APIs
-    search_query: "openai OR anthropic OR gemini API app product language:python stars:>40"
+    search_query: openai OR anthropic OR gemini API app product language:python stars:>40
     frequency: daily
     status: active
-    added_at: "2026-05-26"
+    added_at: '2026-05-26'
     notes: API ecosystem is the fastest-moving layer for AI ideas
-
   github_awesome_ai_lists:
     type: github
     description: Curated awesome-AI lists — mine for idea patterns
-    search_query: "awesome llm OR awesome ai agents OR awesome ai tools"
+    search_query: awesome llm OR awesome ai agents OR awesome ai tools
     frequency: weekly
     status: active
-    added_at: "2026-05-01"
+    added_at: '2026-05-01'
     notes: Awesome lists are lagging indicators but great for pattern mining
-
   github_ai_startups_oss:
     type: github
     description: Open-source AI startup projects
-    search_query: "ai startup open source OR llm startup boilerplate stars:>100"
+    search_query: ai startup open source OR llm startup boilerplate stars:>100
     frequency: weekly
     status: active
-    added_at: "2026-06-01"
-
-  # ── Hacker News (Algolia API, no auth required) ──────────────────────────────
-
+    added_at: '2026-06-01'
   hn_show_ai_tool:
     type: hn
     description: Show HN — launched AI tools and demos
-    search_query: "Show HN AI tool"
+    search_query: Show HN AI tool
     frequency: daily
     status: active
-    added_at: "2026-05-01"
+    added_at: '2026-05-01'
     notes: Best signal for freshly shipped products with community validation
-
   hn_show_llm_app:
     type: hn
     description: Show HN — LLM-powered applications
-    search_query: "Show HN LLM"
+    search_query: Show HN LLM
     frequency: daily
     status: active
-    added_at: "2026-05-01"
-
+    added_at: '2026-05-01'
   hn_show_saas_ai:
     type: hn
     description: Show HN — AI SaaS launches
-    search_query: "Show HN SaaS AI"
+    search_query: Show HN SaaS AI
     frequency: daily
     status: active
-    added_at: "2026-06-01"
-
+    added_at: '2026-06-01'
   hn_ask_startup_ideas:
     type: hn
     description: Ask HN — startup ideas and validation threads
-    search_query: "Ask HN what are you building AI"
+    search_query: Ask HN what are you building AI
     frequency: weekly
     status: active
-    added_at: "2026-05-26"
+    added_at: '2026-05-26'
     notes: '"What are you building" threads surface early-stage unmet needs'
-
-  # ── Web sources (manual review — not consumed by scripts automatically) ────────
-
   producthunt_ai_daily:
     type: producthunt
     description: Product Hunt AI category — daily new launches
-    url: "https://www.producthunt.com/topics/artificial-intelligence?order=newest"
+    url: https://www.producthunt.com/topics/artificial-intelligence?order=newest
     frequency: daily
     status: active
-    added_at: "2026-05-01"
+    added_at: '2026-05-01'
     notes: Best for spotting new AI products 24h after launch
-
   theresanaiforthat:
     type: web
     description: There's An AI For That — most saved tools, gaps = opportunity
-    url: "https://theresanaiforthat.com/most-saved/"
+    url: https://theresanaiforthat.com/most-saved/
     frequency: weekly
     status: active
-    added_at: "2026-05-26"
-
+    added_at: '2026-05-26'
   futurepedia_new:
     type: web
     description: Futurepedia — newest AI tools submitted
-    url: "https://www.futurepedia.io/ai-tools?sort=new"
+    url: https://www.futurepedia.io/ai-tools?sort=new
     frequency: weekly
     status: active
-    added_at: "2026-05-26"
-
+    added_at: '2026-05-26'
   reddit_saas_launches:
     type: reddit
     description: r/SaaS — new AI product launches and feedback
     subreddit: SaaS
-    url: "https://www.reddit.com/r/SaaS/search/?q=AI&sort=new&t=week"
+    url: https://www.reddit.com/r/SaaS/search/?q=AI&sort=new&t=week
     frequency: weekly
     status: active
-    added_at: "2026-05-01"
-
+    added_at: '2026-05-01'
   reddit_sideproject_ai:
     type: reddit
     description: r/SideProject — AI side projects looking for early users
     subreddit: SideProject
-    url: "https://www.reddit.com/r/SideProject/search/?q=AI&sort=new&t=week"
+    url: https://www.reddit.com/r/SideProject/search/?q=AI&sort=new&t=week
     frequency: weekly
     status: active
-    added_at: "2026-05-26"
+    added_at: '2026-05-26'
     notes: Side projects = unvalidated ideas — high volume but noisy
-
   arxiv_cs_ai_recent:
     type: arxiv
     description: arXiv CS.AI — practical AI papers that spawn products
-    url: "https://arxiv.org/list/cs.AI/recent"
+    url: https://arxiv.org/list/cs.AI/recent
     frequency: weekly
     status: paused
-    added_at: "2026-05-01"
+    added_at: '2026-05-01'
     notes: Paused — academic signal too slow; re-enable for quarterly trend analysis
+  github_fighting41love_funnlp:
+    type: github
+    description: 中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库
+    url: https://github.com/fighting41love/funNLP
+    search_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 81483
+    added_at: '2026-06-28'
+  github_composiohq_awesome_claude_skills:
+    type: github
+    description: A curated list of awesome Claude Skills, resources, and tools for
+      customizing Claude AI workflows
+    url: https://github.com/ComposioHQ/awesome-claude-skills
+    search_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 66170
+    added_at: '2026-06-28'
+  github_travisvn_awesome_claude_skills:
+    type: github
+    description: 'A curated list of awesome Claude Skills, resources, and tools for
+      customizing Claude AI workflows — particularly Claude '
+    url: https://github.com/travisvn/awesome-claude-skills
+    search_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 13775
+    added_at: '2026-06-28'
+  github_kyrolabs_awesome_langchain:
+    type: github
+    description: 😎 Awesome list of tools and projects with the awesome LangChain framework
+    url: https://github.com/kyrolabs/awesome-langchain
+    search_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 9427
+    added_at: '2026-06-28'
+  github_georgezouq_awesome_ai_in_finance:
+    type: github
+    description: 🔬 A curated list of awesome LLMs & deep learning strategies & tools
+      in financial market.
+    url: https://github.com/georgezouq/awesome-ai-in-finance
+    search_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 6192
+    added_at: '2026-06-28'
+  github_yzhao062_anomaly_detection_resources:
+    type: github
+    description: Anomaly detection related books, papers, videos, and toolboxes. Last
+      update late 2025 for LLM and VLM works!
+    url: https://github.com/yzhao062/anomaly-detection-resources
+    search_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 9327
+    added_at: '2026-06-28'
+  github_wangrongsheng_awesome_llm_resources:
+    type: github
+    description: 🧑‍🚀 全世界最好的LLM资料总结（多模态生成、Agent、辅助编程、AI审稿、数据处理、模型训练、模型推理、o1 模型、MCP、小语言模型、视觉语言模型）
+      | Summary of the world's best LLM resourc
+    url: https://github.com/WangRongsheng/awesome-LLM-resources
+    search_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 8599
+    added_at: '2026-06-28'
+  github_luban_agi_awesome_aigc_tutorials:
+    type: github
+    description: 'Curated tutorials and resources for Large Language Models, AI Painting,
+      and more. '
+    url: https://github.com/luban-agi/Awesome-AIGC-Tutorials
+    search_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 4520
+    added_at: '2026-06-28'
+  github_eosphoros_ai_awesome_text2sql:
+    type: github
+    description: Curated tutorials and resources for Large Language Models, Text2SQL,  Text2DSL、Text2API、Text2Vis
+      and more.
+    url: https://github.com/eosphoros-ai/Awesome-Text2SQL
+    search_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 3691
+    added_at: '2026-06-28'
+  github_wenyuchiou_awesome_agentic_ai_zh:
+    type: github
+    description: 'A trilingual (繁中 / English / 简中) learning roadmap for agentic AI:
+      from LLM basics to multi-agent systems, with 240+ cura'
+    url: https://github.com/WenyuChiou/awesome-agentic-ai-zh
+    search_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 3402
+    added_at: '2026-06-28'
+  github_theainerd_mlinterview:
+    type: github
+    description: ':octocat: A curated awesome list of AI Startups in India & Machine
+      Learning Interview Guide. Feel free to contribute!'
+    url: https://github.com/theainerd/MLInterview
+    search_query: awesome ai startup
+    frequency: weekly
+    status: candidate
+    stars: 543
+    added_at: '2026-06-28'
+  github_gmberton_awesome_machine_learning_startups:
+    type: github
+    description: List of startups doing AI & ML
+    url: https://github.com/gmberton/awesome-machine-learning-startups
+    search_query: awesome ai startup
+    frequency: weekly
+    status: candidate
+    stars: 439
+    added_at: '2026-06-28'
+  github_ai_collection_ai_collection:
+    type: github
+    description: The Generative AI Landscape - A Collection of Awesome Generative
+      AI Applications
+    url: https://github.com/ai-collection/ai-collection
+    search_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 9026
+    added_at: '2026-06-28'
+  github_agentuniverse_ai_agentuniverse:
+    type: github
+    description: 'agentUniverse is a LLM multi-agent framework that allows developers
+      to easily build multi-agent applications. '
+    url: https://github.com/agentuniverse-ai/agentUniverse
+    search_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 2282
+    added_at: '2026-06-28'
+  github_hymie122_rag_survey:
+    type: github
+    description: 'Collecting awesome papers of RAG for AIGC.  We propose a taxonomy
+      of RAG foundations, enhancements, and applications in '
+    url: https://github.com/hymie122/RAG-Survey
+    search_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 1788
+    added_at: '2026-06-28'
+  github_danielskry_awesome_rag:
+    type: github
+    description: 😎 Awesome list of Retrieval-Augmented Generation (RAG) applications
+      in Generative AI.
+    url: https://github.com/Danielskry/Awesome-RAG
+    search_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 1274
+    added_at: '2026-06-28'
+  github_henomis_lingoose:
+    type: github
+    description: 🪿 LinGoose is a Go framework for building awesome AI/LLM applications.
+    url: https://github.com/henomis/lingoose
+    search_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 833
+    added_at: '2026-06-28'
+  github_dharminjoshi_final_year_project_ideas_2025:
+    type: github
+    description: A curated list of 100 innovative and impactful project ideas for
+      final-year students, covering AI, sustainability, healt
+    url: https://github.com/DharminJoshi/Final-Year-Project-Ideas-2025
+    search_query: ai ideas list curated
+    frequency: weekly
+    status: candidate
+    stars: 336
+    added_at: '2026-06-28'
+  hn_48595882:
+    type: hn
+    description: 'Show HN: Write SaaS apps where users control where their data is
+      stored'
+    url: https://github.com/wolfoo2931/linkedrecords/
+    search_query: best AI resources list
+    frequency: weekly
+    status: candidate
+    points: 69
+    added_at: '2026-06-28'
