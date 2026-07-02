@@ -10,9 +10,26 @@ Discover, structure, score, validate, and contribute practical AI ideas — with
 
 ---
 
+## Awesome AI Builder Series
+
+| 💡 Idea Engine | 🚀 Venture Playbook | 🏗 Business Blueprint | 💰 Monetization Playbook |
+|:---:|:---:|:---:|:---:|
+| **You are here** | [Turn ideas into ventures →](https://github.com/msdw/awesome-ai-venture-playbook) | [Build your AI business →](https://github.com/msdw/awesome-ai-business-blueprint) | [Monetize your AI skills →](https://github.com/msdw/awesome-ai-monetization-playbook) |
+
+---
+
 ## Sponsored — Project of the Week
 
 > *This slot is available. [Learn how to sponsor →](SPONSORS.md)*
+
+---
+
+## Who This Is For
+
+Built for:
+- **AI builders** — developers and no-coders looking for their next AI product to build
+- **Freelancers & consultants** — exploring productizable AI service opportunities
+- **Startup founders** — validating early-stage AI business concepts before committing
 
 ---
 
@@ -53,6 +70,22 @@ A practical, structured, and anti-hype idea engine for discovering useful AI-pow
 
 ---
 
+## Recommended Tools
+
+Tools used and recommended by AI builders in this community:
+
+| Tool | What it's for |
+|---|---|
+| [Cursor](https://cursor.sh) | AI-first code editor — build AI apps 10× faster |
+| [Claude API](https://www.anthropic.com/api) | Best-in-class LLM API for building AI features and agents |
+| [n8n](https://n8n.io) | Open-source workflow automation for AI pipelines |
+| [Make](https://www.make.com) | No-code automation platform for AI workflows |
+| [Replit](https://replit.com) | Ship and demo AI prototypes without local setup |
+
+> Want your tool featured here? [See sponsorship options →](SPONSORS.md)
+
+---
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to suggest a new idea, report a broken link, or flag hype content.
@@ -66,6 +99,19 @@ All submissions go through a human review. Automated discovery creates weekly PR
 ## Automated Updates
 
 Every Monday at 07:00 UTC, a GitHub Actions workflow discovers new AI idea candidates from public sources and opens a pull request for human review. Only validated ideas get merged.
+
+---
+
+## Work With Me
+
+These resources are free. If you want hands-on support applying them to your specific situation:
+
+| | |
+|---|---|
+| **Discovery Call** | 30-min conversation to map your AI opportunity — [book a call →](mailto:mathurin.ache@advanthink.com?subject=Discovery%20Call%20from%20Awesome%20AI%20Idea%20Engine) |
+| **Coaching** | 1:1 guidance to build and launch your AI product or service — [get in touch →](mailto:mathurin.ache@advanthink.com?subject=Coaching%20from%20Awesome%20AI%20Idea%20Engine) |
+| **Consulting** | Hands-on AI consulting for teams — [let's talk →](mailto:mathurin.ache@advanthink.com?subject=Consulting%20from%20Awesome%20AI%20Idea%20Engine) |
+| **Training** | Workshops and bootcamps for AI builders — [learn more →](mailto:mathurin.ache@advanthink.com?subject=Training%20from%20Awesome%20AI%20Idea%20Engine) |
 
 ---
 
