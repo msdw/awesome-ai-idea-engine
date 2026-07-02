@@ -1,0 +1,26 @@
+title: "Show your build"
+labels: ["show-and-tell"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Built something using an idea, playbook, or template from this repo? Show it off — links, screenshots, honest numbers welcome. No hype required.
+  - type: input
+    id: link
+    attributes:
+      label: Link to your project
+      placeholder: https://...
+    validations:
+      required: false
+  - type: textarea
+    id: story
+    attributes:
+      label: What did you build, and what did you use from this repo?
+    validations:
+      required: true
+  - type: textarea
+    id: lessons
+    attributes:
+      label: One thing that worked, one thing that didn't
+    validations:
+      required: false

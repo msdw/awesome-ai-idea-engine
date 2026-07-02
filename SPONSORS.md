@@ -51,6 +51,13 @@ Best for: Platforms wanting sustained visibility with the entire AI builder audi
 
 ---
 
+## Already listed? Get your badge
+
+If your tool appears in this repo, add the **Featured in Awesome AI** badge to your README — free backlink, and it tells your users you're vetted:
+[Get the badge →](https://msdw.github.io/awesome-ai-hub/badge.html)
+
+---
+
 ## Eligibility
 
 - The product or project must be AI-related and genuinely useful to this audience

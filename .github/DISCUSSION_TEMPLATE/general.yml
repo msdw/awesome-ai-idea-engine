@@ -1,0 +1,20 @@
+title: "Feedback on an entry"
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have real-world experience that confirms or contradicts an entry in this repo? Pricing signals, validation results, market feedback — share it here so the list gets better.
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry?
+      placeholder: e.g. the id or title from the YAML/markdown
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: What did you observe in the real world?
+    validations:
+      required: true

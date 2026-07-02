@@ -32,6 +32,9 @@ jobs:
       - name: Validate discovered entries
         run: python scripts/validate_yaml.py
 
+      - name: Generate weekly digest, top 10 and social posts
+        run: python scripts/generate_weekly.py
+
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
