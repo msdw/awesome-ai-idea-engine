@@ -16,7 +16,7 @@ Discover, structure, score, validate, and contribute practical AI ideas — with
 |:---:|:---:|:---:|:---:|
 | **You are here** | [Turn ideas into ventures →](https://github.com/msdw/awesome-ai-venture-playbook) | [Build your AI business →](https://github.com/msdw/awesome-ai-business-blueprint) | [Monetize your AI skills →](https://github.com/msdw/awesome-ai-monetization-playbook) |
 
-<p align="center"><a href="https://msdw.github.io/awesome-ai-hub/">🔗 See the full series & get weekly updates →</a> · <a href="WEEKLY.md">📅 This week's finds</a> · <a href="TOP10.md">🏆 Top 10</a></p>
+<p align="center"><a href="https://msdw.github.io/awesome-ai-hub/">🔗 See the full series & get weekly updates →</a> · <a href="WEEKLY.md">📅 This week's finds</a> · <a href="TOP10.md">🏆 Top 10</a> · <a href="https://github.com/msdw/awesome-ai-idea-engine/discussions">💬 Join the discussion</a></p>
 
 ---
 
