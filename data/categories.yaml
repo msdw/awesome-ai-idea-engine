@@ -1,4 +1,9 @@
 # AI idea categories taxonomy
+#
+# Every id used by data/ideas.yaml must appear here — validate_yaml.py errors on an
+# unknown category. The list previously declared ai_consulting, ai_tools_devs and
+# ai_data while the entries used ai_consultancy, ai_developer_tools and ai_data_tools,
+# and omitted ai_operations, ai_healthcare, ai_finance and ai_research entirely.
 categories:
   - id: ai_saas
     label: AI SaaS
@@ -12,11 +17,11 @@ categories:
     label: AI Automation
     description: Workflow and process automation using AI
 
-  - id: ai_consulting
+  - id: ai_consultancy
     label: AI Consulting & Services
     description: Professional services that deliver AI implementations
 
-  - id: ai_tools_devs
+  - id: ai_developer_tools
     label: AI Tools for Developers
     description: APIs, libraries, and platforms for AI builders
 
@@ -28,13 +33,29 @@ categories:
     label: AI Content & Media
     description: AI applied to content creation, editing, and distribution
 
-  - id: ai_data
+  - id: ai_data_tools
     label: AI Data & Analytics
     description: AI applied to data processing, analysis, and insights
 
   - id: ai_education
     label: AI Education & Training
     description: AI tools for learning, coaching, and skill development
+
+  - id: ai_operations
+    label: AI Operations
+    description: AI applied to internal operations, admin, and back office
+
+  - id: ai_healthcare
+    label: AI Healthcare
+    description: AI products for clinical, patient, and medical admin work
+
+  - id: ai_finance
+    label: AI Finance
+    description: AI products for accounting, budgeting, and financial ops
+
+  - id: ai_research
+    label: AI Research & Analysis
+    description: AI tools for research, analysis, and market intelligence
 
   - id: ai_vertical
     label: AI Vertical Solutions

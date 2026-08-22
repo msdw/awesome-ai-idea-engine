@@ -52,7 +52,7 @@ def load_yaml(path: Path) -> dict | list | None:
         return None
 
 
-def validate_ideas(path: Path) -> None:
+def validate_ideas(path: Path, category_ids: set | None = None) -> None:
     print(f"\nValidating {path.name}...")
     data = load_yaml(path)
     if data is None:
@@ -77,6 +77,12 @@ def validate_ideas(path: Path) -> None:
         for field in REQUIRED_IDEA_FIELDS:
             if field not in idea:
                 error(f"{prefix}: missing required field '{field}'")
+
+        # Check category against categories.yaml — the two drifted apart
+        # once already (ai_consultancy vs ai_consulting, ai_operations missing)
+        category = idea.get("category")
+        if category_ids and category and category not in category_ids:
+            error(f"{prefix}: unknown category '{category}' — declare it in categories.yaml")
 
         # Check status
         status = idea.get("status")
@@ -129,7 +135,7 @@ def main() -> None:
     print("=== Validating YAML schemas ===")
 
     # Validate taxonomy files exist and parse
-    validate_taxonomy(DATA / "categories.yaml", "categories")
+    category_ids = validate_taxonomy(DATA / "categories.yaml", "categories")
     validate_taxonomy(DATA / "business_models.yaml", "business_models")
     validate_taxonomy(DATA / "ai_patterns.yaml", "ai_patterns")
     validate_taxonomy(DATA / "risk_levels.yaml", "risk_levels")
@@ -147,7 +153,7 @@ def main() -> None:
             print(f"\nValidating {fname}... OK")
 
     # Validate ideas
-    validate_ideas(DATA / "ideas.yaml")
+    validate_ideas(DATA / "ideas.yaml", category_ids)
 
     print("\n=== Summary ===")
     print(f"  Errors:   {len(ERRORS)}")

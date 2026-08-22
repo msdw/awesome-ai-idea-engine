@@ -12,6 +12,11 @@ IDEAS_DIR = ROOT / "ideas"
 
 HEADER = "<!-- AUTO-GENERATED — do not edit manually. Run: python scripts/generate_markdown.py -->\n\n"
 
+# Pages that --check found out of date. main() exits non-zero when this is not
+# empty, so a data change committed without regenerating its pages fails the gate
+# instead of passing silently.
+STALE = []
+
 
 def load_yaml(path: Path) -> dict | list | None:
     if not path.exists():
@@ -42,6 +47,7 @@ def write_page(path: Path, content: str, check_only: bool) -> bool:
             return False
 
     if check_only:
+        STALE.append(path)
         print(f"  WOULD WRITE: {path.relative_to(ROOT)}")
         return True
 
@@ -202,6 +208,10 @@ def main() -> None:
     generate_by_time_to_build(ideas, args.check)
     generate_by_risk_level(ideas, args.check)
     generate_by_ai_pattern(ideas, args.check)
+
+    if args.check and STALE:
+        print(f"\n{len(STALE)} page(s) out of date — run: python scripts/generate_markdown.py")
+        sys.exit(1)
 
     print("\nDone")
 

@@ -26,5 +26,8 @@ jobs:
       - name: Commit generated pages
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Regenerate markdown pages [skip ci]"
+          # No [skip ci]: generate_markdown.py --check now fails the Validate
+          # workflow on stale pages, so the regenerating commit has to be
+          # validated in turn for main to end up green.
+          commit_message: "Regenerate markdown pages"
           file_pattern: "ideas/**"
