@@ -3916,3 +3916,223 @@ ideas:
     tags: [product_led_growth, personalization, b2b, saas]
     source: manual_curation
     status: accepted
+
+  - id: ai_self_hosted_agent_gateway
+    title: Self-hosted gateway for coding agents
+    summary: >
+      A single self-hostable endpoint that routes requests from any coding agent
+      (CLI, IDE plugin, CI job) to the model backend a team is allowed to use,
+      with per-repository policy, secret redaction and a full audit trail.
+    category: ai_developer_tools
+    target_users: [developer, engineering_manager, it_admin]
+    target_buyers: [Platform engineering teams, Software organizations with code-confidentiality rules]
+    industries: [software]
+    pain_points:
+      - Organisations that cannot send source code to a vendor cloud have no approved way to use coding agents
+      - Every agent harness ships its own auth, configuration and log format, so nothing can be governed centrally
+    ai_solution:
+      - Route agent traffic to an approved model backend and apply per-repository policy
+      - Redact secrets before egress and record every prompt and response for audit
+    ai_patterns: [workflow_automation, classification, code_generation]
+    possible_business_models: [subscription_saas, licensing, consulting_retainer]
+    technical_stack: [anthropic_api, openai_api, open_source_llm, python, fastapi]
+    validation_methods: [customer_interviews, pilot_client, forum_research]
+    validation_steps:
+      - Interview 10 platform teams about how coding agents get approved today
+      - Run a pilot on one repository and count how many policy blocks fire per week
+      - Check whether the audit log satisfies an existing internal control
+    difficulty: high
+    time_to_mvp: "8-12 weeks"
+    risk_level: medium
+    scoring:
+      pain_intensity: 8
+      willingness_to_pay: 8
+      ai_fit: 6
+      buildability: 6
+      market_signal: 7
+      differentiation_potential: 6
+      monetization_potential: 8
+      compliance_risk: 3
+    tags: [developer_tools, security, self_hosted, compliance, b2b]
+    source: community
+    status: accepted
+    _meta:
+      source: hacker_news
+      discovered_at: '2026-08-22T07:35:00'
+      curated: true
+
+  - id: ai_gpu_fleet_health_verification
+    title: GPU fleet health and benchmark verification service
+    summary: >
+      Runs a standard health and throughput suite against rented or owned GPUs,
+      compares the result to the advertised specification, and flags cards that
+      degrade over time.
+    category: ai_infrastructure
+    target_users: [it_admin, data_scientist, engineering_manager]
+    target_buyers: [ML platform teams, GPU resellers and neoclouds]
+    industries: [software]
+    pain_points:
+      - Buyers rent GPU capacity with no way to verify the card performs as advertised
+      - Thermal throttling and memory faults degrade training runs silently and get blamed on the model
+    ai_solution:
+      - Detect anomalous throughput and memory-error patterns against a per-card baseline
+      - Summarise each run into a pass/fail report a customer can send to their provider
+    ai_patterns: [anomaly_detection, forecasting, summarization]
+    possible_business_models: [usage_based_api, subscription_saas, audit_assessment]
+    technical_stack: [python, fastapi, open_source_llm]
+    validation_methods: [customer_interviews, pilot_client, forum_research]
+    validation_steps:
+      - Benchmark the same workload across 3 providers and quantify the spread
+      - Interview 10 teams that rent GPUs about how they currently detect bad cards
+      - Offer a paid one-off audit before building any dashboard
+    difficulty: medium
+    time_to_mvp: "6-10 weeks"
+    risk_level: medium
+    scoring:
+      pain_intensity: 7
+      willingness_to_pay: 7
+      ai_fit: 5
+      buildability: 7
+      market_signal: 6
+      differentiation_potential: 7
+      monetization_potential: 7
+      compliance_risk: 1
+    tags: [infrastructure, analytics, b2b, developer_tools]
+    source: community
+    status: accepted
+    _meta:
+      source: hacker_news
+      discovered_at: '2026-08-22T07:35:00'
+      curated: true
+
+  - id: ai_llm_output_quality_gate
+    title: LLM output quality gate for CI pipelines
+    summary: >
+      A CI check that runs a fixed set of assertions against an application's
+      model outputs on every change, so a prompt or model swap that degrades
+      quality fails the build instead of shipping.
+    category: ai_developer_tools
+    target_users: [developer, engineering_manager, product_manager]
+    target_buyers: [Teams shipping LLM features, AI platform teams]
+    industries: [software]
+    pain_points:
+      - A prompt edit or model version change degrades output quality with no test to catch it
+      - Manual spot-checking does not scale past a handful of prompts
+    ai_solution:
+      - Score each output against rubric assertions and flag regressions versus the last green build
+      - Cluster failures so a reviewer sees the pattern rather than 200 individual diffs
+    ai_patterns: [classification, summarization, anomaly_detection]
+    possible_business_models: [subscription_saas, freemium, usage_based_api]
+    technical_stack: [anthropic_api, openai_api, python, typescript]
+    validation_methods: [forum_research, pilot_client, landing_page]
+    validation_steps:
+      - Replay 3 real prompt-regression incidents and check the gate would have caught them
+      - Measure the false-positive rate over 2 weeks on one team's pipeline
+      - Test whether teams will wire it in as a required status check
+    difficulty: medium
+    time_to_mvp: "4-8 weeks"
+    risk_level: medium
+    scoring:
+      pain_intensity: 8
+      willingness_to_pay: 7
+      ai_fit: 8
+      buildability: 7
+      market_signal: 7
+      differentiation_potential: 6
+      monetization_potential: 7
+      compliance_risk: 1
+    tags: [developer_tools, automation, devops, b2b]
+    source: community
+    status: accepted
+    _meta:
+      source: github
+      discovered_at: '2026-08-22T07:30:00'
+      curated: true
+
+  - id: ai_agent_activity_audit_log
+    title: AI agent activity audit log for operations teams
+    summary: >
+      A shared record of what automated agents did inside a company's systems —
+      which action, on whose behalf, with what result — so operations and audit
+      can answer "who changed this" when the actor was not a person.
+    category: ai_operations
+    target_users: [operations, it_admin, engineering_manager]
+    target_buyers: [Operations leads, Internal audit and risk teams]
+    industries: [operations]
+    pain_points:
+      - Once agents act on real systems, nobody can reconstruct which change came from which agent run
+      - Existing audit logs record a service account, not the task or the person who delegated it
+    ai_solution:
+      - Normalise agent actions from different tools into one timeline with the delegating user attached
+      - Summarise each agent run in plain language and flag actions outside its declared scope
+    ai_patterns: [extraction, summarization, anomaly_detection, classification]
+    possible_business_models: [subscription_saas, consulting_retainer, audit_assessment]
+    technical_stack: [anthropic_api, python, fastapi, supabase]
+    validation_methods: [customer_interviews, pilot_client, competitor_analysis]
+    validation_steps:
+      - Interview 10 operations leads already running agents in production
+      - Reconstruct one real incident manually and time how long it takes without the tool
+      - Check what an internal auditor actually accepts as evidence
+    difficulty: medium
+    time_to_mvp: "6-10 weeks"
+    risk_level: medium
+    scoring:
+      pain_intensity: 7
+      willingness_to_pay: 7
+      ai_fit: 6
+      buildability: 6
+      market_signal: 6
+      differentiation_potential: 7
+      monetization_potential: 7
+      compliance_risk: 3
+    tags: [operations, compliance, agents, b2b, enterprise]
+    source: community
+    status: accepted
+    _meta:
+      source: github
+      discovered_at: '2026-08-22T07:30:00'
+      curated: true
+
+  - id: ai_narrative_continuity_assistant
+    title: AI continuity tracker for long-form fiction
+    summary: >
+      Tracks characters, timeline and established facts across a book-length
+      manuscript and flags contradictions as the author writes, including in
+      passages drafted with a language model.
+    category: ai_content
+    target_users: [content_creator, indie_builder]
+    target_buyers: [Independent authors (self-serve), Small presses and editors]
+    industries: [media_content]
+    pain_points:
+      - Continuity errors across 100,000 words are found by readers, not by the author
+      - Model-assisted drafting introduces contradictions because the model does not hold the whole manuscript
+    ai_solution:
+      - Extract entities, dates and stated facts per scene and maintain a story bible automatically
+      - Flag new text that contradicts an established fact and cite the earlier passage
+    ai_patterns: [extraction, semantic_search, classification, summarization]
+    possible_business_models: [subscription_saas, freemium]
+    technical_stack: [anthropic_api, open_source_llm, python, qdrant]
+    validation_methods: [forum_research, customer_interviews, landing_page]
+    validation_steps:
+      - Run the checker over 5 published novels and measure how many real continuity errors it finds
+      - Interview 10 authors about how they track continuity today
+      - Test willingness to pay against the price of a human continuity editor
+    difficulty: medium
+    time_to_mvp: "6-10 weeks"
+    risk_level: medium
+    scoring:
+      pain_intensity: 6
+      willingness_to_pay: 5
+      ai_fit: 8
+      buildability: 7
+      market_signal: 5
+      differentiation_potential: 7
+      monetization_potential: 5
+      compliance_risk: 1
+    tags: [content_creation, b2c, productivity]
+    source: community
+    status: accepted
+    _meta:
+      source: hacker_news
+      discovered_at: '2026-08-22T07:35:00'
+      curated: true

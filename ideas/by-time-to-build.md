@@ -132,6 +132,7 @@
 - [AI schema mapping and data migration assistant](../data/ideas.yaml) — Maps fields between source and target data schemas automatically, generates transformation logic, an
 - [AI dependency update and breaking change analyzer](../data/ideas.yaml) — Analyzes code when dependencies are updated, identifies breaking changes, and generates migration pa
 - [AI sales call coaching and feedback tool](../data/ideas.yaml) — Analyzes recorded sales calls and provides structured feedback on talk time, objection handling, dis
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
 
 ## 5-8 weeks
 
@@ -143,11 +144,15 @@
 
 - [AI budget forecasting assistant](../data/ideas.yaml) — Analyzes historical spending patterns and business context to generate department budget forecasts a
 - [AI customer churn prediction and intervention tool](../data/ideas.yaml) — Predicts which customers are likely to churn using behavioral signals and suggests personalized rete
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## 8-12 weeks
 
 - [AI medical coding assistant](../data/ideas.yaml) — Suggests ICD-10 and CPT codes from clinical notes, reducing coding errors and denial rates for medic
 - [AI patient intake and history assistant](../data/ideas.yaml) — Collects patient history, symptoms, and chief complaints before appointments via a conversational in
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
 
 ## 8-16 weeks
 

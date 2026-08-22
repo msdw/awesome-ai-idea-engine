@@ -80,6 +80,10 @@
 - [AI competitive pricing intelligence tool](../data/ideas.yaml) — Monitors competitor pricing pages, product tiers, and public pricing signals to help businesses stay
 - [AI buyer persona and ICP generator](../data/ideas.yaml) — Generates detailed buyer personas and ideal customer profiles from interview transcripts, CRM data,
 
+## Media Content
+
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
+
 ## Operations
 
 - [AI meeting notes to CRM sync](../data/ideas.yaml) — Automatically converts meeting transcripts into structured CRM entries — contact notes, action items
@@ -111,6 +115,7 @@
 - [AI consulting proposal and statement of work generator](../data/ideas.yaml) — Generates professional consulting proposals and SOWs from a project brief, including scope, delivera
 - [AI meeting intelligence and decision tracking platform](../data/ideas.yaml) — Records, transcribes, and analyzes team meetings to extract decisions, action items, and participant
 - [AI research report generator for analysts](../data/ideas.yaml) — Generates structured market research and analyst reports from data inputs, web research, and templat
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
 
 ## Software
 
@@ -169,4 +174,7 @@
 - [AI buyer persona and ICP generator](../data/ideas.yaml) — Generates detailed buyer personas and ideal customer profiles from interview transcripts, CRM data,
 - [AI investor update and board report writer](../data/ideas.yaml) — Generates monthly investor update emails and board reports from structured metrics and narrative inp
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
 

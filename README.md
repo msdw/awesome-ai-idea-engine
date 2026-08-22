@@ -51,7 +51,7 @@ A practical, structured, and anti-hype idea engine for discovering useful AI-pow
 ## What This Is Not
 
 - Not financial advice or income promises
-- Not a "make $10k/month with AI" list
+- Not a get-rich-quick list
 - Not a prompt dump
 - Not guaranteed business ideas — every entry is a hypothesis to validate
 

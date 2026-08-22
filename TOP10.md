@@ -1,4 +1,4 @@
-# Top 10 — updated 2026-07-02
+# Top 10 — updated 2026-08-22
 
 The 10 highest-scoring entries in the Awesome AI Idea Engine, across all scoring dimensions.
 

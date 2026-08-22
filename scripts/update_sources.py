@@ -104,7 +104,7 @@ def search_github_for_sources(dry_run: bool) -> list[tuple[str, dict]]:
                 "type": "github",
                 "description": (repo.get("description") or repo.get("name", ""))[:120],
                 "url": repo.get("html_url", ""),
-                "search_query": query,
+                "found_by_query": query,
                 "frequency": "weekly",
                 "status": "candidate",
                 "stars": stars,
@@ -151,7 +151,7 @@ def search_hn_for_sources(dry_run: bool) -> list[tuple[str, dict]]:
                 "type": "hn",
                 "description": hit.get("title", "")[:120],
                 "url": hn_url,
-                "search_query": query,
+                "found_by_query": query,
                 "frequency": "weekly",
                 "status": "candidate",
                 "points": points,
@@ -183,19 +183,23 @@ def save_candidates(candidates: list[tuple[str, dict]], dry_run: bool) -> int:
     existing_keys = set(data.get("sources", {}).keys())
     added = 0
 
+    # Append only — never rewrite the whole file, so the hand-written comments
+    # and section headers of the curated sources list survive intact.
+    fresh = {}
     for name, entry in candidates:
-        # Make key unique if collision
         key = name
         i = 2
         while key in existing_keys:
             key = f"{name}_{i}"
             i += 1
-        data.setdefault("sources", {})[key] = entry
+        fresh[key] = entry
         existing_keys.add(key)
         added += 1
 
-    with open(SOURCES_FILE, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
+    dumped = yaml.dump(fresh, allow_unicode=True, default_flow_style=False, sort_keys=False)
+    indented = "".join(f"  {line}\n" if line.strip() else "\n" for line in dumped.splitlines())
+    with open(SOURCES_FILE, "a", encoding="utf-8") as f:
+        f.write("\n" + indented)
 
     print(f"Saved {added} new candidates to {SOURCES_FILE.name}")
 

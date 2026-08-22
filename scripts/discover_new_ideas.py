@@ -76,65 +76,66 @@ def discover_from_github(mode: str, dry_run: bool) -> list[dict]:
     # Deduplicate
     queries = list(dict.fromkeys(queries))
 
-    since_days = 7 if mode == "weekly" else 1
+    # GitHub creation window: a repo almost never clears the star threshold
+    # within 7 days of being created, so a 7-day window returned nothing at all.
+    since_days = 30 if mode == "weekly" else 7
     since = (datetime.datetime.utcnow() - datetime.timedelta(days=since_days)).strftime("%Y-%m-%d")
 
     seen_repos: set = set()
     for query in queries:
         url = f"{GITHUB_API}/search/repositories?q={query.replace(' ', '+')}+created:>{since}&sort=stars&per_page=15"
-        data = fetch_json(url)
+        data = fetch_json(url, _GITHUB_TOKEN)
         if not data:
             time.sleep(1)
             continue
+        for repo in data.get("items", []):
+            name = repo.get("full_name", "")
+            if name in seen_repos:
+                continue
+            desc = repo.get("description") or ""
+            stars = repo.get("stargazers_count", 0)
+            topics = repo.get("topics", [])
+            url_html = repo.get("html_url", "")
 
-            for repo in data.get("items", []):
-                name = repo.get("full_name", "")
-                if name in seen_repos:
-                    continue
-                desc = repo.get("description") or ""
-                stars = repo.get("stargazers_count", 0)
-                topics = repo.get("topics", [])
-                url_html = repo.get("html_url", "")
+            if stars < 50:
+                continue
 
-                if stars < 50:
-                    continue
-
-                candidate = {
-                    "id": f"candidate_{name.replace('/', '_').lower()}",
-                    "title": f"{repo.get('name', '')} — {desc[:80]}",
-                    "summary": desc or "No description available",
-                    "category": "ai_saas",
-                    "target_users": ["developer"],
-                    "pain_points": ["See repository description"],
-                    "ai_solution": ["See repository description"],
-                    "ai_patterns": ["generation"],
-                    "possible_business_models": ["subscription_saas"],
-                    "technical_stack": ["openai_api", "python"],
-                    "validation_methods": ["forum_research"],
-                    "validation_steps": ["Review repository README and issues"],
-                    "difficulty": "medium",
-                    "time_to_mvp": "unknown",
-                    "risk_level": "medium",
-                    "scoring": {
-                        "pain_intensity": 5, "willingness_to_pay": 5, "ai_fit": 7,
-                        "buildability": 6, "market_signal": stars // 100,
-                        "differentiation_potential": 5, "monetization_potential": 5,
-                        "compliance_risk": 3
-                    },
-                    "tags": topics[:5] or ["automation"],
-                    "source": url_html,
-                    "status": "candidate",
-                    "_discovery_meta": {
-                        "source": "github",
-                        "stars": stars,
-                        "query": query,
-                        "discovered_at": datetime.datetime.utcnow().isoformat()
-                    }
+            candidate = {
+                "id": f"candidate_{name.replace('/', '_').lower()}",
+                "title": f"{repo.get('name', '')} — {desc[:80]}",
+                "summary": desc or "No description available",
+                "category": "ai_saas",
+                "target_users": ["developer"],
+                "pain_points": ["See repository description"],
+                "ai_solution": ["See repository description"],
+                "ai_patterns": ["generation"],
+                "possible_business_models": ["subscription_saas"],
+                "technical_stack": ["openai_api", "python"],
+                "validation_methods": ["forum_research"],
+                "validation_steps": ["Review repository README and issues"],
+                "difficulty": "medium",
+                "time_to_mvp": "unknown",
+                "risk_level": "medium",
+                "scoring": {
+                    "pain_intensity": 5, "willingness_to_pay": 5, "ai_fit": 7,
+                    "buildability": 6, "market_signal": stars // 100,
+                    "differentiation_potential": 5, "monetization_potential": 5,
+                    "compliance_risk": 3
+                },
+                "tags": topics[:5] or ["automation"],
+                "source": url_html,
+                "status": "candidate",
+                "_meta": {
+                    "source": "github",
+                    "stars": stars,
+                    "query": query,
+                    "discovered_at": datetime.datetime.utcnow().isoformat()
                 }
-                candidates.append(candidate)
-                seen_repos.add(name)
-                print(f"  Found: {name} ({stars} stars)")
-            time.sleep(0.3)
+            }
+            candidates.append(candidate)
+            seen_repos.add(name)
+            print(f"  Found: {name} ({stars} stars)")
+        time.sleep(0.3)
 
     return candidates
 
@@ -195,7 +196,7 @@ def discover_from_hn(mode: str, dry_run: bool) -> list[dict]:
                 "tags": ["automation"],
                 "source": story_url,
                 "status": "candidate",
-                "_discovery_meta": {
+                "_meta": {
                     "source": "hacker_news",
                     "points": points,
                     "query": kw,
@@ -241,10 +242,12 @@ def save_candidates(candidates: list[dict], dry_run: bool) -> None:
         print("All candidates already exist in ideas.yaml")
         return
 
-    data.setdefault("ideas", []).extend(new_ideas)
-
-    with open(ideas_path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
+    # Append only — never rewrite the whole file, so the hand-written comments,
+    # block scalars and flow-style lists of curated entries survive intact.
+    dumped = yaml.dump(new_ideas, allow_unicode=True, default_flow_style=False, sort_keys=False)
+    indented = "".join(f"  {line}\n" if line.strip() else "\n" for line in dumped.splitlines())
+    with open(ideas_path, "a", encoding="utf-8") as f:
+        f.write("\n" + indented)
 
     print(f"Added {len(new_ideas)} new candidates to data/ideas.yaml")
 

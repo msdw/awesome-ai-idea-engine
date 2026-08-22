@@ -144,3 +144,32 @@ sources:
     status: paused
     added_at: "2026-05-01"
     notes: Paused — academic signal too slow; re-enable for quarterly trend analysis
+
+  # ── Curated directories (reviewed by hand, not used as API queries) ──────────
+
+  awesome_open_ai_developer_tools:
+    type: web
+    description: Curated directory of open-source AI devtools, local LLMs and SaaS alternatives
+    url: "https://github.com/Sami-Uysal/awesome-open-ai-developer-tools"
+    frequency: weekly
+    status: active
+    added_at: "2026-08-22"
+    notes: Reviewed manually — good source of self-hosted alternatives to paid AI tools
+
+  awesome_claude_skills:
+    type: web
+    description: Curated list of Claude Skills and agent-workflow customisations
+    url: "https://github.com/ComposioHQ/awesome-claude-skills"
+    frequency: weekly
+    status: active
+    added_at: "2026-08-22"
+    notes: Reviewed manually — a skill with many stars points at a workflow people repeat by hand
+
+  ai_collection_directory:
+    type: web
+    description: Large directory of generative AI applications, grouped by use case
+    url: "https://github.com/ai-collection/ai-collection"
+    frequency: weekly
+    status: paused
+    added_at: "2026-08-22"
+    notes: Paused — high volume and slow to update; sweep once a quarter for category gaps

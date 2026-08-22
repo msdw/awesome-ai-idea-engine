@@ -31,6 +31,22 @@ PATTERNS = [re.compile(p, re.IGNORECASE) for p in FORBIDDEN_PHRASES]
 SCAN_EXTENSIONS = {".md", ".yaml", ".yml"}
 SKIP_DIRS = {".git", "node_modules", "__pycache__", ".venv", "venv"}
 
+# Governance files state the forbidden vocabulary on purpose: issue and PR templates
+# quote it in their checklists, CONTRIBUTING defines the rule, and the PROJECT_*.md
+# build spec discusses it. The rule applies to catalogue content, not to the text
+# that describes the rule — scanning these files only ever produced false failures.
+SKIP_DIR_NAMES = {".github"}
+SKIP_FILE_NAMES = {"CONTRIBUTING.md"}
+SKIP_FILE_PREFIXES = ("PROJECT_",)
+
+
+def is_governance_file(path: Path) -> bool:
+    if SKIP_DIR_NAMES & set(path.parts):
+        return True
+    if path.name in SKIP_FILE_NAMES:
+        return True
+    return path.name.startswith(SKIP_FILE_PREFIXES)
+
 VIOLATIONS = []
 
 
@@ -55,6 +71,8 @@ def main() -> None:
         if path.is_file() and path.suffix in SCAN_EXTENSIONS:
             # Skip hidden dirs and venvs
             if any(part in SKIP_DIRS for part in path.parts):
+                continue
+            if is_governance_file(path.relative_to(ROOT)):
                 continue
             scan_file(path)
 

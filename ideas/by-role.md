@@ -65,6 +65,7 @@
 - [AI video script and storyboard generator](../data/ideas.yaml) — Generates video scripts for YouTube, course lessons, and explainer videos from topic and outline inp
 - [AI social media publishing and scheduling agent](../data/ideas.yaml) — Repurposes approved content, schedules posts at optimal times, and suggests follow-up content based
 - [AI podcast outline and show notes generator](../data/ideas.yaml) — Generates episode outlines, interview question guides, and show notes from topic descriptions — cutt
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Data Engineer
 
@@ -75,6 +76,7 @@
 ## Data Scientist
 
 - [AI data quality checker for analytics teams](../data/ideas.yaml) — Scans datasets for quality issues (nulls, outliers, schema drift, duplicates, format inconsistencies
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
 
 ## Designer
 
@@ -113,6 +115,8 @@
 - [AI interview preparation coach](../data/ideas.yaml) — Conducts mock interviews tailored to a specific company, role, and interview type (behavioral, techn
 - [AI technical writer and documentation assistant](../data/ideas.yaml) — Helps technical writers produce and maintain documentation by drafting sections, maintaining consist
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
 
 ## Educator
 
@@ -129,6 +133,10 @@
 - [AI dependency update and breaking change analyzer](../data/ideas.yaml) — Analyzes code when dependencies are updated, identifies breaking changes, and generates migration pa
 - [AI software architecture diagram generator](../data/ideas.yaml) — Generates architecture diagrams from code, descriptions, or documentation using Mermaid or PlantUML,
 - [AI meeting intelligence and decision tracking platform](../data/ideas.yaml) — Records, transcribes, and analyzes team meetings to extract decisions, action items, and participant
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
 
 ## Executive Assistant
 
@@ -193,11 +201,15 @@
 - [AI consulting proposal and statement of work generator](../data/ideas.yaml) — Generates professional consulting proposals and SOWs from a project brief, including scope, delivera
 - [AI legal contract drafting tool for SMBs](../data/ideas.yaml) — Generates standard business contracts (NDA, service agreements, employment, freelance) from a struct
 - [AI investor update and board report writer](../data/ideas.yaml) — Generates monthly investor update emails and board reports from structured metrics and narrative inp
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## It Admin
 
 - [AI IT helpdesk self-service bot](../data/ideas.yaml) — Handles common IT helpdesk requests (password resets, software access, troubleshooting) automaticall
 - [AI incident response and runbook agent](../data/ideas.yaml) — Assists on-call engineers during incidents by analyzing alerts, suggesting runbook steps, and genera
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
 
 ## Marketer
 
@@ -256,6 +268,7 @@
 - [AI legal contract drafting tool for SMBs](../data/ideas.yaml) — Generates standard business contracts (NDA, service agreements, employment, freelance) from a struct
 - [AI meeting intelligence and decision tracking platform](../data/ideas.yaml) — Records, transcribes, and analyzes team meetings to extract decisions, action items, and participant
 - [AI employee feedback and engagement analyzer](../data/ideas.yaml) — Analyzes employee survey responses, performance review comments, and exit interview data to surface
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
 
 ## Pharmacist
 
@@ -276,6 +289,7 @@
 - [AI competitive pricing intelligence tool](../data/ideas.yaml) — Monitors competitor pricing pages, product tiers, and public pricing signals to help businesses stay
 - [AI buyer persona and ICP generator](../data/ideas.yaml) — Generates detailed buyer personas and ideal customer profiles from interview transcripts, CRM data,
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
 
 ## Recruiter
 

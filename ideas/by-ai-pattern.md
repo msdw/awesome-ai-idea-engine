@@ -8,6 +8,9 @@
 - [AI budget forecasting assistant](../data/ideas.yaml) — Analyzes historical spending patterns and business context to generate department budget forecasts a
 - [AI metric anomaly detection and alerting](../data/ideas.yaml) — Monitors business metrics for anomalies, explains probable causes, and alerts the right team members
 - [AI employee feedback and engagement analyzer](../data/ideas.yaml) — Analyzes employee survey responses, performance review comments, and exit interview data to surface
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
 
 ## Classification
 
@@ -47,6 +50,10 @@
 - [AI buyer persona and ICP generator](../data/ideas.yaml) — Generates detailed buyer personas and ideal customer profiles from interview transcripts, CRM data,
 - [AI job posting optimizer for talent acquisition](../data/ideas.yaml) — Analyzes job postings for clarity, inclusivity, and effectiveness, then rewrites them to attract mor
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Code Generation
 
@@ -63,6 +70,7 @@
 - [AI API mock and test data generator](../data/ideas.yaml) — Generates realistic mock APIs and test data from OpenAPI specs, enabling frontend development withou
 - [AI software architecture diagram generator](../data/ideas.yaml) — Generates architecture diagrams from code, descriptions, or documentation using Mermaid or PlantUML,
 - [AI accessibility and inclusive design checker](../data/ideas.yaml) — Analyzes web UIs and content for accessibility issues, explains each issue in plain language, and ge
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
 
 ## Conversational Agent
 
@@ -131,11 +139,14 @@
 - [AI competitive pricing intelligence tool](../data/ideas.yaml) — Monitors competitor pricing pages, product tiers, and public pricing signals to help businesses stay
 - [AI technical writer and documentation assistant](../data/ideas.yaml) — Helps technical writers produce and maintain documentation by drafting sections, maintaining consist
 - [AI buyer persona and ICP generator](../data/ideas.yaml) — Generates detailed buyer personas and ideal customer profiles from interview transcripts, CRM data,
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Forecasting
 
 - [AI budget forecasting assistant](../data/ideas.yaml) — Analyzes historical spending patterns and business context to generate department budget forecasts a
 - [AI customer churn prediction and intervention tool](../data/ideas.yaml) — Predicts which customers are likely to churn using behavioral signals and suggests personalized rete
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
 
 ## Generation
 
@@ -236,6 +247,7 @@
 - [AI natural language to SQL generator](../data/ideas.yaml) — Lets non-technical users query databases in plain English and get accurate, explained SQL with resul
 - [AI company policy Q&A bot](../data/ideas.yaml) — Lets employees ask questions about HR policies, benefits, and procedures in natural language and get
 - [AI knowledge base builder from existing content](../data/ideas.yaml) — Imports existing documentation, chat logs, and SOPs and organizes them into a searchable, AI-powered
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Structured Output
 
@@ -307,6 +319,10 @@
 - [AI research report generator for analysts](../data/ideas.yaml) — Generates structured market research and analyst reports from data inputs, web research, and templat
 - [AI employee feedback and engagement analyzer](../data/ideas.yaml) — Analyzes employee survey responses, performance review comments, and exit interview data to surface
 - [AI product changelog and release notes writer](../data/ideas.yaml) — Generates user-facing changelog entries and release notes from git commits, PR descriptions, and Jir
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Workflow Automation
 
@@ -330,4 +346,5 @@
 - [AI dependency update and breaking change analyzer](../data/ideas.yaml) — Analyzes code when dependencies are updated, identifies breaking changes, and generates migration pa
 - [AI social media publishing and scheduling agent](../data/ideas.yaml) — Repurposes approved content, schedules posts at optimal times, and suggests follow-up content based
 - [AI meeting intelligence and decision tracking platform](../data/ideas.yaml) — Records, transcribes, and analyzes team meetings to extract decisions, action items, and participant
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
 

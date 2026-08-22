@@ -14,6 +14,10 @@
 - [AI model selection and evaluation advisory](../data/ideas.yaml) — Helps teams choose the right LLM for their use case by defining evaluation criteria, running benchma
 - [AI LLM cost optimization service](../data/ideas.yaml) — Audits LLM API usage and recommends optimizations — prompt compression, caching, model routing, and
 - [AI localization and translation quality assurance tool](../data/ideas.yaml) — Translates product UI, documentation, and marketing content while maintaining brand voice, and flags
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Aws
 
@@ -54,6 +58,9 @@
 - [AI accessibility and inclusive design checker](../data/ideas.yaml) — Analyzes web UIs and content for accessibility issues, explains each issue in plain language, and ge
 - [AI technical writer and documentation assistant](../data/ideas.yaml) — Helps technical writers produce and maintain documentation by drafting sections, maintaining consist
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
 
 ## Llama
 
@@ -106,6 +113,12 @@
 - [AI buyer persona and ICP generator](../data/ideas.yaml) — Generates detailed buyer personas and ideal customer profiles from interview transcripts, CRM data,
 - [AI job posting optimizer for talent acquisition](../data/ideas.yaml) — Analyzes job postings for clarity, inclusivity, and effectiveness, then rewrites them to attract mor
 - [AI investor update and board report writer](../data/ideas.yaml) — Generates monthly investor update emails and board reports from structured metrics and narrative inp
+
+## Open Source Llm
+
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Openai Api
 
@@ -209,6 +222,8 @@
 - [AI job posting optimizer for talent acquisition](../data/ideas.yaml) — Analyzes job postings for clarity, inclusivity, and effectiveness, then rewrites them to attract mor
 - [AI investor update and board report writer](../data/ideas.yaml) — Generates monthly investor update emails and board reports from structured metrics and narrative inp
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
 
 ## Pinecone
 
@@ -358,6 +373,15 @@
 - [AI job posting optimizer for talent acquisition](../data/ideas.yaml) — Analyzes job postings for clarity, inclusivity, and effectiveness, then rewrites them to attract mor
 - [AI investor update and board report writer](../data/ideas.yaml) — Generates monthly investor update emails and board reports from structured metrics and narrative inp
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
+
+## Qdrant
+
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## Redis
 
@@ -368,4 +392,12 @@
 - [AI LLM cost optimization service](../data/ideas.yaml) — Audits LLM API usage and recommends optimizations — prompt compression, caching, model routing, and
 - [AI competitor tracking and alert agent](../data/ideas.yaml) — Tracks competitor websites, social accounts, and app stores for changes and delivers categorized ale
 - [AI competitive pricing intelligence tool](../data/ideas.yaml) — Monitors competitor pricing pages, product tiers, and public pricing signals to help businesses stay
+
+## Supabase
+
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+
+## Typescript
+
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
 

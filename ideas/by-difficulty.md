@@ -89,6 +89,10 @@
 - [AI accessibility and inclusive design checker](../data/ideas.yaml) — Analyzes web UIs and content for accessibility issues, explains each issue in plain language, and ge
 - [AI interview preparation coach](../data/ideas.yaml) — Conducts mock interviews tailored to a specific company, role, and interview type (behavioral, techn
 - [AI technical writer and documentation assistant](../data/ideas.yaml) — Helps technical writers produce and maintain documentation by drafting sections, maintaining consist
+- [GPU fleet health and benchmark verification service](../data/ideas.yaml) — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the
+- [LLM output quality gate for CI pipelines](../data/ideas.yaml) — A CI check that runs a fixed set of assertions against an application's model outputs on every chang
+- [AI agent activity audit log for operations teams](../data/ideas.yaml) — A shared record of what automated agents did inside a company's systems — which action, on whose beh
+- [AI continuity tracker for long-form fiction](../data/ideas.yaml) — Tracks characters, timeline and established facts across a book-length manuscript and flags contradi
 
 ## High
 
@@ -104,6 +108,7 @@
 - [AI software architecture diagram generator](../data/ideas.yaml) — Generates architecture diagrams from code, descriptions, or documentation using Mermaid or PlantUML,
 - [AI customer churn prediction and intervention tool](../data/ideas.yaml) — Predicts which customers are likely to churn using behavioral signals and suggests personalized rete
 - [AI user onboarding experience optimizer](../data/ideas.yaml) — Analyzes user onboarding flows to identify drop-off points, generate personalized in-app guidance, a
+- [Self-hosted gateway for coding agents](../data/ideas.yaml) — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job)
 
 ## Very High
 

@@ -1,13 +1,13 @@
-# This Week's Finds — 2026-07-02
+# This Week's Finds — 2026-08-22
 
 The latest idea candidates discovered by our automated weekly scan, ranked by score.
 Curated by hand — see [the full list](https://github.com/msdw/awesome-ai-idea-engine).
 
-- **AI RFP response assistant for agencies** — Helps agencies respond to RFPs faster by extracting requirements, matching against past proposals, and generating draft responses for review. *(score: 61)*
-- **AI contract review assistant for freelancers** — A tool that helps freelancers review client contracts by extracting key clauses, flagging unusual or risky terms, and summarizing obligations in plain language. *(score: 59)*
-- **AI meeting notes to CRM sync** — Automatically converts meeting transcripts into structured CRM entries — contact notes, action items, deal stage updates, and follow-up tasks. *(score: 59)*
-- **AI job description analyzer for candidates** — Analyzes job descriptions to extract required vs. nice-to-have skills, estimate salary range, flag red flags, and score candidate fit. *(score: 49)*
-- **AI employee onboarding document generator** — Generates customized employee onboarding documents, checklists, and 30/60/90 day plans based on role, department, and company information. *(score: 48)*
+- **Self-hosted gateway for coding agents** — A single self-hostable endpoint that routes requests from any coding agent (CLI, IDE plugin, CI job) to the model backend a team is allowed to use, with per-repository policy, secret redaction and a full audit trail. *(score: 52)*
+- **LLM output quality gate for CI pipelines** — A CI check that runs a fixed set of assertions against an application's model outputs on every change, so a prompt or model swap that degrades quality fails the build instead of shipping. *(score: 51)*
+- **AI agent activity audit log for operations teams** — A shared record of what automated agents did inside a company's systems — which action, on whose behalf, with what result — so operations and audit can answer "who changed this" when the actor was not a person. *(score: 49)*
+- **GPU fleet health and benchmark verification service** — Runs a standard health and throughput suite against rented or owned GPUs, compares the result to the advertised specification, and flags cards that degrade over time. *(score: 47)*
+- **AI continuity tracker for long-form fiction** — Tracks characters, timeline and established facts across a book-length manuscript and flags contradictions as the author writes, including in passages drafted with a language model. *(score: 44)*
 
 ---
 
