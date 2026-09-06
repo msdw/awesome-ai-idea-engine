@@ -173,3 +173,180 @@ sources:
     status: paused
     added_at: "2026-08-22"
     notes: Paused — high volume and slow to update; sweep once a quarter for category gaps
+
+  github_fighting41love_funnlp:
+    type: github
+    description: 中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库
+    url: https://github.com/fighting41love/funNLP
+    found_by_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 82907
+    added_at: '2026-09-06'
+  github_travisvn_awesome_claude_skills:
+    type: github
+    description: 'A curated list of awesome Claude Skills, resources, and tools for
+      customizing Claude AI workflows — particularly Claude '
+    url: https://github.com/travisvn/awesome-claude-skills
+    found_by_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 14978
+    added_at: '2026-09-06'
+  github_kyrolabs_awesome_langchain:
+    type: github
+    description: 😎 Awesome list of tools and projects with the awesome LangChain framework
+    url: https://github.com/kyrolabs/awesome-langchain
+    found_by_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 9518
+    added_at: '2026-09-06'
+  github_georgezouq_awesome_ai_in_finance:
+    type: github
+    description: 🔬 A curated list of awesome LLMs & deep learning strategies & tools
+      in financial market.
+    url: https://github.com/georgezouq/awesome-ai-in-finance
+    found_by_query: awesome ai tools list
+    frequency: weekly
+    status: candidate
+    stars: 6486
+    added_at: '2026-09-06'
+  github_hesreallyhim_awesome_claude_code:
+    type: github
+    description: A hand-picked collection of the finest of resources for the most awesome
+      of agents, Claude Code, the undisputed champion
+    url: https://github.com/hesreallyhim/awesome-claude-code
+    found_by_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 53581
+    added_at: '2026-09-06'
+  github_yzhao062_anomaly_detection_resources:
+    type: github
+    description: Anomaly detection related books, papers, videos, and toolboxes. Last
+      update late 2025 for LLM and VLM works!
+    url: https://github.com/yzhao062/anomaly-detection-resources
+    found_by_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 9377
+    added_at: '2026-09-06'
+  github_wangrongsheng_awesome_llm_resources:
+    type: github
+    description: 🧑‍🚀 全世界最好的LLM资料总结（多模态生成、Agent、辅助编程、AI审稿、数据处理、模型训练、模型推理、o1 模型、MCP、小语言模型、视觉语言模型）
+      | Summary of the world's best LLM resourc
+    url: https://github.com/WangRongsheng/awesome-LLM-resources
+    found_by_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 8917
+    added_at: '2026-09-06'
+  github_wenyuchiou_awesome_agentic_ai_zh:
+    type: github
+    description: 'A trilingual (繁中 / English / 简中) learning roadmap for agentic AI:
+      from LLM basics to multi-agent systems, with 240+ cura'
+    url: https://github.com/WenyuChiou/awesome-agentic-ai-zh
+    found_by_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 6680
+    added_at: '2026-09-06'
+  github_luban_agi_awesome_aigc_tutorials:
+    type: github
+    description: 'Curated tutorials and resources for Large Language Models, AI Painting,
+      and more. '
+    url: https://github.com/luban-agi/Awesome-AIGC-Tutorials
+    found_by_query: awesome llm resources
+    frequency: weekly
+    status: candidate
+    stars: 4538
+    added_at: '2026-09-06'
+  github_krishmunot_awesome_startup:
+    type: github
+    description: ':sunglasses: All the required resources to build your own startup'
+    url: https://github.com/KrishMunot/awesome-startup
+    found_by_query: awesome ai startup
+    frequency: weekly
+    status: candidate
+    stars: 2342
+    added_at: '2026-09-06'
+  github_theainerd_mlinterview:
+    type: github
+    description: ':octocat: A curated awesome list of AI Startups in India & Machine
+      Learning Interview Guide. Feel free to contribute!'
+    url: https://github.com/theainerd/MLInterview
+    found_by_query: awesome ai startup
+    frequency: weekly
+    status: candidate
+    stars: 543
+    added_at: '2026-09-06'
+  github_gmberton_awesome_machine_learning_startups:
+    type: github
+    description: List of startups doing AI & ML
+    url: https://github.com/gmberton/awesome-machine-learning-startups
+    found_by_query: awesome ai startup
+    frequency: weekly
+    status: candidate
+    stars: 440
+    added_at: '2026-09-06'
+  github_gingiris_gingiris_launch:
+    type: github
+    description: '🚀 Product Hunt Launch Playbook — Proven tactics from 30x daily #1
+      winner. Complete go-to-market guide for AI products, s'
+    url: https://github.com/Gingiris/gingiris-launch
+    found_by_query: awesome ai startup
+    frequency: weekly
+    status: candidate
+    stars: 203
+    added_at: '2026-09-06'
+  github_agentuniverse_ai_agentuniverse:
+    type: github
+    description: 'agentUniverse is a LLM multi-agent framework that allows developers
+      to easily build multi-agent applications. '
+    url: https://github.com/agentuniverse-ai/agentUniverse
+    found_by_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 2351
+    added_at: '2026-09-06'
+  github_hymie122_rag_survey:
+    type: github
+    description: 'Collecting awesome papers of RAG for AIGC.  We propose a taxonomy
+      of RAG foundations, enhancements, and applications in '
+    url: https://github.com/hymie122/RAG-Survey
+    found_by_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 1790
+    added_at: '2026-09-06'
+  github_gdamdam_awesome_decentralized_web:
+    type: github
+    description: A curated list of peer-to-peer, federated, and local-first protocols,
+      applications, and developer tools. Excludes crypto
+    url: https://github.com/gdamdam/awesome-decentralized-web
+    found_by_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 1709
+    added_at: '2026-09-06'
+  github_danielskry_awesome_rag:
+    type: github
+    description: 😎 Awesome list of Retrieval-Augmented Generation (RAG) applications
+      in Generative AI.
+    url: https://github.com/Danielskry/Awesome-RAG
+    found_by_query: awesome ai applications
+    frequency: weekly
+    status: candidate
+    stars: 1356
+    added_at: '2026-09-06'
+  github_dharminjoshi_final_year_project_ideas_2025:
+    type: github
+    description: A curated list of 100 innovative and impactful project ideas for final-year
+      students, covering AI, sustainability, healt
+    url: https://github.com/DharminJoshi/Final-Year-Project-Ideas-2025
+    found_by_query: ai ideas list curated
+    frequency: weekly
+    status: candidate
+    stars: 367
+    added_at: '2026-09-06'
