@@ -4136,3 +4136,53 @@ ideas:
       source: hacker_news
       discovered_at: '2026-08-22T07:35:00'
       curated: true
+
+  - id: candidate_sepehr071_awesome-iran-mcp
+    title: 'awesome-iran-mcp — 19 open-source MCP servers (308 tools) that give AI agents
+      the Iranian web: Digi'
+    summary: '19 open-source MCP servers (308 tools) that give AI agents the Iranian
+      web: Digikala, Snappfood, Jabama, MrBilit, Paziresh24, Taaghche and more. Prices
+      in Toman.'
+    category: ai_saas
+    target_users:
+    - developer
+    pain_points:
+    - See repository description
+    ai_solution:
+    - See repository description
+    ai_patterns:
+    - generation
+    possible_business_models:
+    - subscription_saas
+    technical_stack:
+    - openai_api
+    - python
+    validation_methods:
+    - forum_research
+    validation_steps:
+    - Review repository README and issues
+    difficulty: medium
+    time_to_mvp: unknown
+    risk_level: medium
+    scoring:
+      pain_intensity: 5
+      willingness_to_pay: 5
+      ai_fit: 7
+      buildability: 6
+      market_signal: 1
+      differentiation_potential: 5
+      monetization_potential: 5
+      compliance_risk: 3
+    tags:
+    - agent-skills
+    - ai-agents
+    - awesome
+    - claude
+    - claude-code-plugin
+    source: https://github.com/sepehr071/awesome-iran-mcp
+    status: candidate
+    _meta:
+      source: github
+      stars: 118
+      query: awesome llm OR awesome ai agents OR awesome ai tools
+      discovered_at: '2026-10-17T11:29:51.886872'
