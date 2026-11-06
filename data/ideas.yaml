@@ -4136,3 +4136,52 @@ ideas:
       source: hacker_news
       discovered_at: '2026-08-22T07:35:00'
       curated: true
+
+  - id: candidate_orkbot-run_ork
+    title: 'ork — Source-available AI assistant with persistent bots that share conversations
+      and '
+    summary: Source-available AI assistant with persistent bots that share conversations
+      and work on isolated computers. Self-hosted, with web, desktop, and mobile apps.
+    category: ai_saas
+    target_users:
+    - developer
+    pain_points:
+    - See repository description
+    ai_solution:
+    - See repository description
+    ai_patterns:
+    - generation
+    possible_business_models:
+    - subscription_saas
+    technical_stack:
+    - openai_api
+    - python
+    validation_methods:
+    - forum_research
+    validation_steps:
+    - Review repository README and issues
+    difficulty: medium
+    time_to_mvp: unknown
+    risk_level: medium
+    scoring:
+      pain_intensity: 5
+      willingness_to_pay: 5
+      ai_fit: 7
+      buildability: 6
+      market_signal: 1
+      differentiation_potential: 5
+      monetization_potential: 5
+      compliance_risk: 3
+    tags:
+    - ai-agents
+    - ai-assistants
+    - automation
+    - electron
+    - expo
+    source: https://github.com/orkbot-run/ork
+    status: candidate
+    _meta:
+      source: github
+      stars: 159
+      query: ai tool OR ai saas OR ai automation language:typescript stars:>30
+      discovered_at: '2026-11-06T14:53:20.226470'

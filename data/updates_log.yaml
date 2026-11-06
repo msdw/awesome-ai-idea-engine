@@ -1,2 +1,5 @@
-# Log of automated discovery runs — populated by scripts
-updates: []
+updates:
+- action: discovery
+  date: '2026-11-06T14:53:26.212684'
+  mode: weekly
+  new_candidates: 1
