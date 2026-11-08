@@ -1,2 +1,4 @@
-# Log of automated discovery runs — populated by scripts
-updates: []
+updates:
+- action: sources_update
+  date: '2026-11-08T13:01:50.428003'
+  new_source_candidates: 19
