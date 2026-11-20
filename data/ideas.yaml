@@ -4136,3 +4136,52 @@ ideas:
       source: hacker_news
       discovered_at: '2026-08-22T07:35:00'
       curated: true
+
+  - id: candidate_bigtee9999_viruagent-cli
+    title: viruagent-cli — AI agent CLI for blog, Naver Cafe, Instagram, X and Reddit
+      automation - /viruage
+    summary: AI agent CLI for blog, Naver Cafe, Instagram, X and Reddit automation -
+      /viruagent-cli
+    category: ai_saas
+    target_users:
+    - developer
+    pain_points:
+    - See repository description
+    ai_solution:
+    - See repository description
+    ai_patterns:
+    - generation
+    possible_business_models:
+    - subscription_saas
+    technical_stack:
+    - openai_api
+    - python
+    validation_methods:
+    - forum_research
+    validation_steps:
+    - Review repository README and issues
+    difficulty: medium
+    time_to_mvp: unknown
+    risk_level: medium
+    scoring:
+      pain_intensity: 5
+      willingness_to_pay: 5
+      ai_fit: 7
+      buildability: 6
+      market_signal: 1
+      differentiation_potential: 5
+      monetization_potential: 5
+      compliance_risk: 3
+    tags:
+    - blog-automation
+    - cafe-automation
+    - naver
+    - naver-blog
+    - naver-cafe
+    source: https://github.com/bigtee9999/viruagent-cli
+    status: candidate
+    _meta:
+      source: github
+      stars: 153
+      query: ai tool OR ai saas OR ai automation language:typescript stars:>30
+      discovered_at: '2026-11-20T15:58:42.663597'
